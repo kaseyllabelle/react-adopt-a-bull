@@ -1,16 +1,22 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import LogIn from '../components/log-in'
+import LogIn from '../../components/log-in'
+import {toggleLogIn} from './landing.actions'
 
 export class Landing extends React.Component
 {
 	constructor(props){
 		super(props);
 	}
+
 	render(){
 
 		console.log(this.props);
+
+		this.toggleLogIn = () => {
+			toggleLogIn(this.props.dispatch);
+		}
 
 	    return(
 			<div className="landing-container">
@@ -21,11 +27,11 @@ export class Landing extends React.Component
 					<form className={this.props.signUp ? "sign-up" : "sign-in"}>
 						<div className="radio-button-bar sign-up-sign-in">
 							<div className="radio-button-wrapper radio-button-wrapper-alt">
-								<input type="radio" name="log-in" id="btn-sign-up" className="radio-button" defaultChecked={this.props.signUp} required/>
+								<input type="radio" name="log-in" id="btn-sign-up" className="radio-button" onClick={this.toggleLogIn} defaultChecked={this.props.signUp} required/>
 								<label htmlFor="btn-sign-up" className="radio-button-label radio-button-label-left">Sign Up</label>
 							</div>
 							<div className="radio-button-wrapper radio-button-wrapper-alt">
-								<input type="radio" name="log-in" id="btn-sign-in" className="radio-button" defaultChecked={this.props.signUp} required/>
+								<input type="radio" name="log-in" id="btn-sign-in" className="radio-button" onClick={this.toggleLogIn} defaultChecked={!this.props.signUp} required/>
 								<label htmlFor="btn-sign-in" className="radio-button-label radio-button-label-right">Sign In</label>
 							</div>
 						</div>
@@ -42,7 +48,6 @@ export class Landing extends React.Component
 				</aside>
 			</div>
 	    )
-
 	}
 }
 
