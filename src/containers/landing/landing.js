@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
 import LogIn from '../../components/log-in'
-import {toggleLogIn} from './landing.actions'
+import {toggleLogInAction, signInAction} from './landing.actions'
 
 export class Landing extends React.Component
 {
@@ -14,8 +15,21 @@ export class Landing extends React.Component
 
 		console.log(this.props);
 
-		this.toggleLogIn = () => {
-			toggleLogIn(this.props.dispatch);
+		if (this.props.userIdFromState) {
+			console.log("i exist!");
+			return <Redirect to={`/main/${this.props.userIdFromState}`} />
+		}
+
+		this.toggleLogInFn = () => {
+			toggleLogInAction(this.props.dispatch);
+		}
+
+		this.signInFn = (e) => {
+			e.preventDefault();
+			console.log(e);
+			const email = document.getElementById("email").value;
+			const password = document.getElementById("password").value;
+			signInAction(this.props.dispatch, email, password);
 		}
 
 	    return(
@@ -27,11 +41,11 @@ export class Landing extends React.Component
 					<form className={this.props.signUp ? "sign-up" : "sign-in"}>
 						<div className="radio-button-bar sign-up-sign-in">
 							<div className="radio-button-wrapper radio-button-wrapper-alt">
-								<input type="radio" name="log-in" id="btn-sign-up" className="radio-button" onClick={this.toggleLogIn} defaultChecked={this.props.signUp} required/>
+								<input type="radio" name="log-in" id="btn-sign-up" className="radio-button" onClick={this.toggleLogInFn} defaultChecked={this.props.signUp} required/>
 								<label htmlFor="btn-sign-up" className="radio-button-label radio-button-label-left">Sign Up</label>
 							</div>
 							<div className="radio-button-wrapper radio-button-wrapper-alt">
-								<input type="radio" name="log-in" id="btn-sign-in" className="radio-button" onClick={this.toggleLogIn} defaultChecked={!this.props.signUp} required/>
+								<input type="radio" name="log-in" id="btn-sign-in" className="radio-button" onClick={this.toggleLogInFn} defaultChecked={!this.props.signUp} required/>
 								<label htmlFor="btn-sign-in" className="radio-button-label radio-button-label-right">Sign In</label>
 							</div>
 						</div>
@@ -43,7 +57,7 @@ export class Landing extends React.Component
 							<label htmlFor="password">password:</label>
 							<input type="password" name="password" id="password" autoComplete="current-password" required/>
 						</div>
-						<LogIn signUp={this.props.signUp} />
+						<LogIn logInProp={this.props.logInFromState} signInProp={this.signInFn} />
 					</form>
 				</aside>
 			</div>
@@ -52,8 +66,10 @@ export class Landing extends React.Component
 }
 
 const mapStateToProps = (state) => {
+	console.log(state);
 	return {
-		signUp: state.signUp
+		logInFromState: state._root.entries["0"][1].logInFromStore,
+		userIdFromState: state._root.entries["0"][1].userIdFromStore
 	}
 }
 

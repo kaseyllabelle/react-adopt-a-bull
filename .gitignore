@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+_node-server/node_modules
 
 # testing
 /coverage
@@ -19,6 +20,7 @@
 .travis.yml
 src/**/*.css
 .sass-cache/
+_node-server/.env
 
 npm-debug.log*
 yarn-debug.log*
