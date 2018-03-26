@@ -7,11 +7,11 @@ import {toggleLogInAction, signInAction} from './landing.actions'
 
 export class Landing extends React.Component
 {
-	constructor(props){
+	constructor(props) {
 		super(props);
 	}
 
-	render(){
+	render() {
 
 		console.log(this.props);
 
@@ -32,7 +32,7 @@ export class Landing extends React.Component
 			signInAction(this.props.dispatch, email, password);
 		}
 
-	    return(
+		return(
 			<div className="landing-container">
 				<section className="landing-image">
 				</section>
@@ -61,7 +61,7 @@ export class Landing extends React.Component
 					</form>
 				</aside>
 			</div>
-	    )
+		)
 	}
 }
 

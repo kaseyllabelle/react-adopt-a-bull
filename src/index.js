@@ -13,10 +13,10 @@ import './styles/css/main.adopters.css';
 import App from './App';
 
 ReactDOM.render(
-    <Provider store={store}>
-	    <Router>
-	    	<App />
-	    </Router>
-    </Provider>,
-    document.getElementById('root')
+	<Provider store={store}>
+		<Router>
+			<App />
+		</Router>
+	</Provider>,
+	document.getElementById('root')
 );

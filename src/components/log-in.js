@@ -25,8 +25,8 @@ export default function LogIn(props)
 	</div>)
 
 	return(
-    	<div>
-      		{props.logInProp ? signInConst : signUpConst}
-    	</div>
-    )
+		<div>
+			{props.logInProp ? signInConst : signUpConst}
+		</div>
+	)
 }

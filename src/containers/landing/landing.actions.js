@@ -1,8 +1,8 @@
 export const TOGGLE_LOG_IN = 'TOGGLE_LOG_IN';
 export const toggleLogInAction = (dispatch) => {
-    return dispatch({
-    	type: TOGGLE_LOG_IN
-    });
+	return dispatch({
+		type: TOGGLE_LOG_IN
+	});
 };
 
 export const SIGN_IN = 'SIGN_IN';
@@ -23,7 +23,7 @@ export const signInAction = (dispatch, email, password) => {
 		return obj.json().then((o) => {
 			return dispatch({
 				type: SIGN_IN,
-    			payload: o
+				payload: o
 			})
 		});
 	});
