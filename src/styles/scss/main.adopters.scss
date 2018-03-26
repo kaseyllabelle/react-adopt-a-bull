@@ -1,0 +1,132 @@
+@import "_globals.scss";
+
+.main-inner
+{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.discovery-wrapper
+{
+	flex: 1 0 auto;
+}
+
+.puppy-card
+{
+	max-width: 400px;
+	margin: 0 auto;
+	background-color: $amber700;
+	border-radius: 3px;
+}
+
+.puppy-card-thumbnail
+{
+	display: block;
+	width: 100%;
+	border-radius: 3px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	margin: 0;
+}
+
+.puppy-card-info
+{
+	padding: 10px;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+}
+
+.puppy-card-name
+{
+	margin: 2px 0 0;
+	font-size: 16px;
+	color: $white;
+}
+
+.puppy-card-icon
+{
+	display: inline-block;
+	text-align: right;
+	color: $white;
+}
+
+.puppy-card-expanded
+{
+	border: 1px solid $amber700;
+	border-radius: 3px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	padding: 10px;
+	background-color: $white;
+	text-align: left;
+}
+
+.puppy-card-expanded-label
+{
+	color: $grey500;
+}
+
+.puppy-card-expanded-content
+{
+	color: $blue500;
+}
+
+.name
+{
+	margin-top: 0;
+}
+
+.email
+{
+	margin-bottom: 0;
+}
+
+.bottom-nav
+{
+	flex-shrink: 0;
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+	padding: 0 75px;
+}
+
+.icon-wrapper
+{
+	width: 50px;
+	height: 50px;
+	margin: 10px;
+}
+
+.material-icons
+{
+	display: inline-flex;
+}
+
+.icon-next
+{
+	font-size: 50px;
+}
+
+.icon-mail
+{
+	font-size: 46px;
+	color: $amber700;
+}
+
+.icon-favorite
+{
+	font-size: 46px;
+	color: $pinkA400;
+}
+
+@media all and (max-width: 767px) {
+	.discovery-wrapper
+	{
+		margin: 0 30px;
+	}
+}
