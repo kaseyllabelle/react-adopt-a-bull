@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
-import LogIn from '../../components/log-in'
-import {toggleLogInAction, signInAction} from './landing.actions'
+import LogIn from '../../components/log-in.component'
+import {toggleLogInAction, signInAction} from './landing.action'
 
 export class Landing extends React.Component
 {

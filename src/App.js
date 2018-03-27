@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import {Route} from 'react-router';
 
-import Header from './components/header.components';
+import Header from './components/header.component';
 import Landing from './containers/landing/landing';
 import List from './containers/list/main.list';
 import MainContainer from './containers/main/main.main-container';

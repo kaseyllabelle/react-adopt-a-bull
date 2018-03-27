@@ -1,11 +1,11 @@
-import {TOGGLE_LOG_IN, SIGN_IN} from './landing.actions';
+import {TOGGLE_LOG_IN, SIGN_IN} from './landing.action';
 
 const initialState = {
 	logInFromStore: true
 };
 
 export default function landingReducer(state=initialState, action) {
-	console.log(action);
+	// console.log(action);
 	
 	if (action.type === TOGGLE_LOG_IN) {
 		return {...state, logInFromStore: !state.logInFromStore};
