@@ -1,10 +1,13 @@
 import React from 'react';
 
+import IconButton from '../components/icon-button.component';
+
 export default function PuppyCardInfo(props)
 {
 	return(
 		<div>
 			<p>puppy card info component</p>
+			<IconButton />
 			{/*
 				TODO:
 				// <div className="puppy-card-info">
