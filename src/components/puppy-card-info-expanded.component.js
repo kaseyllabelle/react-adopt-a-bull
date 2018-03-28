@@ -3,8 +3,15 @@ import React from 'react';
 export default function PuppyCardInfoExpanded(props)
 {
 	return(
-		<div>
-			<p>puppy card info expanded component</p>
+		<div className="puppy-card-expanded">
+			<p className="name">
+				<span className="puppy-card-expanded-label">Name:</span> 
+				<span className="puppy-card-expanded-content">Gus</span>
+			</p>
+			<p className="gender">
+				<span className="puppy-card-expanded-label">Gender:</span> 
+				<span className="puppy-card-expanded-content">male</span>
+			</p>
 			{/*
 				TODO:
 				// <div className="puppy-card-expanded">

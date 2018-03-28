@@ -1,14 +1,14 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 export default function PuppyCardImage(props)
 {
 	return(
-		<div>
-			<p>puppy card image component</p>
+		<Fragment>
+			<img src="https://raw.githubusercontent.com/kaseyllabelle/react-adopt-a-bull/wip/public/images/demo-pups/gus.jpg" className="puppy-card-thumbnail" alt="puppy"/>
 			{/*
 				TODO:
 				// <img src="<%=data[0].photo%>" className="puppy-card-thumbnail" />
 			*/}
-		</div>
+		</ Fragment>
 	)
 }

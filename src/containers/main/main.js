@@ -8,7 +8,7 @@ export default function Main(props)
 		<section className="main js-main-adopters">
 			<div className="main-inner">
 				<div className="js-puppy-card">
-					<PuppyCard />
+					<PuppyCard sectionProp="main"/>
 				</div>
 				<div className="bottom-nav">
 					<a className="icon-wrapper next">
@@ -18,8 +18,7 @@ export default function Main(props)
 						<i className="material-icons icon-mail">mail_outline</i>
 					</a>
 					<a className="icon-wrapper favorite">
-						{/* TODO: fix data-pId */}
-						<i className="material-icons icon-favorite" data-pId="">favorite_outline</i>
+						<i className="material-icons icon-favorite" data-puppy-id="">favorite_outline</i>
 					</a>
 				</div>
 			</div>
@@ -39,7 +38,7 @@ export default function Main(props)
 							<i class="material-icons icon-mail">mail_outline</i>
 						</a>
 						<a class="icon-wrapper favorite">
-							<i class="material-icons icon-favorite" data-pId="">favorite_outline</i>
+							<i class="material-icons icon-favorite" data-puppy-id="">favorite_outline</i>
 						</a>
 					</div>
 				</div>

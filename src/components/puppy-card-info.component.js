@@ -4,10 +4,11 @@ import IconButton from '../components/icon-button.component';
 
 export default function PuppyCardInfo(props)
 {
+	console.log(props);
 	return(
-		<div>
-			<p>puppy card info component</p>
-			<IconButton />
+		<div className="puppy-card-info">
+			<p className="puppy-card-name">Gus</p>
+			<IconButton toggleInfoPropNested={props.toggleInfoProp} toggleIconPropNested={props.toggleIconProp} />
 			{/*
 				TODO:
 				// <div className="puppy-card-info">

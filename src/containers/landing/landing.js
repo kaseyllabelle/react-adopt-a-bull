@@ -7,10 +7,6 @@ import {toggleLogInAction, signInAction} from './landing.action'
 
 export class Landing extends React.Component
 {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 
 		console.log(this.props);

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 export default function IconButton(props)
 {
 	return(
-		<div>
-			<i className="material-icons">info</i>
+		<Fragment>
+			<i className="material-icons" onClick={(e) => {props.toggleInfoPropNested(e)}}>
+				{props.toggleIconPropNested}
+			</i>
 			{/*
 				TODO:
 					swap info button for close button when card is expanded
@@ -12,6 +14,6 @@ export default function IconButton(props)
 					use for favorite, email, and next icon buttons in discovery section
 				<i className="material-icons puppy-card-icon">info</i>
 			*/}
-		</div>
+		</Fragment>
 	)
 }
