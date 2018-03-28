@@ -1,10 +1,11 @@
 import React, {Component, Fragment} from 'react';
+import {connect} from 'react-redux';
 
 import PuppyCardImage from '../components/puppy-card-image.component';
 import PuppyCardInfo from '../components/puppy-card-info.component';
 import PuppyCardInfoExpanded from '../components/puppy-card-info-expanded.component';
 
-export default class PuppyCard extends Component
+export class PuppyCard extends Component
 {
 	constructor(props) {
 		super(props);
@@ -30,10 +31,12 @@ export default class PuppyCard extends Component
 			}
 		}
 
+		console.log(this.props.puppyFromState[0] && this.props.puppyFromState[0].name);
+
 		return(
 			<Fragment>
 				<div className="puppy-card">
-					<div className="puppy-card-container">
+					<div className="puppy-card-container" puppyIdProp={this.props.puppyFromState[0] && this.props.puppyFromState[0]._id}>
 						<PuppyCardImage />
 						<PuppyCardInfo toggleInfoProp={this.toggleInfoFn} toggleIconProp={this.toggleIconFn()} />
 						{this.state.infoExpanded && <PuppyCardInfoExpanded />}
@@ -60,3 +63,12 @@ export default class PuppyCard extends Component
 		)
 	}
 }
+
+const mapStateToProps = (state) => {
+	console.log(state);
+	return {
+		puppyFromState: state._root.entries[1][1].puppyFromStore
+	}
+}
+
+export default connect(mapStateToProps) (PuppyCard);
