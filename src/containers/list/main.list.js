@@ -1,27 +1,37 @@
 import React from 'react';
 
+import PuppyCard from '../../components/puppy-card.component';
+
 export default function List(props)
 {
+	// TODO: update puppyCardArray when we're getting content dynamically
+	const puppyCardArray = [];
+
 	return(
 		<aside className="list">
-			<p className="section-header">favorites</p>
+			<p className="section-header">{props.accountTypeProp === 'adopter' ? 'favorites' : 'adopt-a-bull-puppies'}</p>
 			<div className="puppies favorite-puppies">
-				puppy cards here
+				<PuppyCard sectionProp={"favorites"}/>
 			</div>
 			{/*
 				ADOPTERS
 				<aside class="list">
 					<p class="section-header">favorites</p>
 					<div class="puppies favorite-puppies">
+						// database content
 					</div>
 				</aside>
 
 				ADOPTERS EDIT
+				// click heart icon
+				// alert 'are you sure you want to remove [puppy name] from your favorites?'
+				// confirm / cancel
 
 				SHELTERS
 				<aside class="list">
 					<p class="section-header">adopt-a-bull puppies</p>
 					<div class="puppies adopt-a-bull-puppies">
+						// database content
 					</div>
 				</aside>
 

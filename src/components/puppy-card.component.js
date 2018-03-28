@@ -26,20 +26,17 @@ export default class PuppyCard extends Component
 				return this.state.infoExpanded ? 'close' : 'info';
 			}
 			if(this.props.sectionProp === 'favorites') {
-				return 'heart';
+				return 'favorite';
 			}
 		}
 
 		return(
 			<Fragment>
-				<p className="section-header section-header-main">discover puppies</p>
-				<div className="discovery-wrapper">
-					<div className="puppy-card">
-						<div className="puppy-card-container">
-							<PuppyCardImage />
-							<PuppyCardInfo toggleInfoProp={this.toggleInfoFn} toggleIconProp={this.toggleIconFn()} />
-							{this.state.infoExpanded && <PuppyCardInfoExpanded />}
-						</div>
+				<div className="puppy-card">
+					<div className="puppy-card-container">
+						<PuppyCardImage />
+						<PuppyCardInfo toggleInfoProp={this.toggleInfoFn} toggleIconProp={this.toggleIconFn()} />
+						{this.state.infoExpanded && <PuppyCardInfoExpanded />}
 					</div>
 				</div>
 				{/*

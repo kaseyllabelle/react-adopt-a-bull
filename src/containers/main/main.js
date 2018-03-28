@@ -8,7 +8,10 @@ export default function Main(props)
 		<section className="main js-main-adopters">
 			<div className="main-inner">
 				<div className="js-puppy-card">
-					<PuppyCard sectionProp="main"/>
+					<p className="section-header section-header-main">discover puppies</p>
+					<div className="discovery-wrapper">
+						<PuppyCard sectionProp="main"/>
+					</div>
 				</div>
 				<div className="bottom-nav">
 					<a className="icon-wrapper next">
