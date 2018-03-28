@@ -10,30 +10,14 @@ export default function List(props)
 	return(
 		<aside className="list">
 			<p className="section-header">{props.accountTypeProp === 'adopter' ? 'favorites' : 'adopt-a-bull-puppies'}</p>
-			<div className="puppies favorite-puppies">
+			<div className="puppies {props.accountTypeProp === 'adopter' ? 'favorite-puppies' : 'adopt-a-bull-puppies'}">
 				<PuppyCard sectionProp={"favorites"}/>
 			</div>
 			{/*
-				ADOPTERS
-				<aside class="list">
-					<p class="section-header">favorites</p>
-					<div class="puppies favorite-puppies">
-						// database content
-					</div>
-				</aside>
-
 				ADOPTERS EDIT
 				// click heart icon
 				// alert 'are you sure you want to remove [puppy name] from your favorites?'
 				// confirm / cancel
-
-				SHELTERS
-				<aside class="list">
-					<p class="section-header">adopt-a-bull puppies</p>
-					<div class="puppies adopt-a-bull-puppies">
-						// database content
-					</div>
-				</aside>
 
 				SHELTERS EDIT
 				<div class="discovery-wrapper">
