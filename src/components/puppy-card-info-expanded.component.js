@@ -6,11 +6,14 @@ export default function PuppyCardInfoExpanded(props)
 
 	const puppyNameProp = props.puppyProp["0"] && props.puppyProp["0"].name;
 
+	// TODO:
+	// make fields data-driven
+
 	return(
 		<div className="puppy-card-expanded">
 			<p className="name">
 				<span className="puppy-card-expanded-label">Name:</span> 
-				<span className="puppy-card-expanded-content">{puppyNameProp}?</span>
+				<span className="puppy-card-expanded-content">{puppyNameProp}</span>
 			</p>
 			<p className="gender">
 				{/* TODO: how do we get make these fields data driven? */}

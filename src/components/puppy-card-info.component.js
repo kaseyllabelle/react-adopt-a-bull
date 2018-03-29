@@ -6,8 +6,15 @@ export default function PuppyCardInfo(props)
 {
 	console.log(props);
 
-	const puppyNameProp = props.puppyProp["0"] && props.puppyProp["0"].name;
+	let puppyNameProp;
 
+	if (Array.isArray(puppyNameProp)) {
+		puppyNameProp = props.puppyProp["0"] && props.puppyProp["0"].name;
+	}
+	else {
+		puppyNameProp = props.puppyProp.name;
+	}
+	
 	return(
 		<div className="puppy-card-info">
 			<p className="puppy-card-name">{puppyNameProp}</p>

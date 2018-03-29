@@ -41,10 +41,9 @@ export const favoritePuppyAction = (dispatch, puppyId) => {
 
 export const RENDER_FAVORITE_PUPPIES = 'RENDER_FAVORITE_PUPPIES';
 export const renderFavoritePuppiesAction = (dispatch) => {
-	return fetch(`/api/adopters/${localStorage.getItem('userId')}`, {
+	return fetch(`http://localhost:8080/api/adopters/${localStorage.getItem('userId')}`, {
 		method: 'GET',
 		headers: {
-			// do we need to include headers?
 			'Content-Type': 'application/json'
 		}
 	}).then((obj) => {
@@ -79,5 +78,4 @@ export const renderFavoritePuppiesAction = (dispatch) => {
 // 		}
 // 	});
 // }
-
 // renderFavoritePuppies();

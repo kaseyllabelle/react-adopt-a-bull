@@ -21,6 +21,7 @@ export class MainContainer extends React.Component
 		// update to use url
 		// if adopter or shelter
 		getPuppyAction(this.props.dispatch);
+		renderFavoritePuppiesAction(this.props.dispatch);
 	}
 
 	favoritePuppyFn() {
@@ -39,7 +40,7 @@ export class MainContainer extends React.Component
 	render() {
 		return(
 			<div className="main-container">
-				<List accountTypeProp={'adopter'} />
+				{this.props.favoritedPuppiesFromState && <List accountTypeProp={'adopter'} favoritedPuppiesProp={this.props.favoritedPuppiesFromState} />}
 				<Main accountTypeProp={'adopter'} favoritePuppyProp={this.favoritePuppyFn} />
 				<Settings accountTypeProp={'adopter'} />
 			</div>
@@ -50,7 +51,8 @@ export class MainContainer extends React.Component
 const mapStateToProps = (state) => {
 	console.log(state);
 	return {
-		puppyFromState: state._root.entries[1][1].puppyFromStore
+		puppyFromState: state._root.entries[1][1].puppyFromStore,
+		favoritedPuppiesFromState: state._root.entries[1][1].favoritePuppiesFromStore.favoritePuppies
 	}
 }
 

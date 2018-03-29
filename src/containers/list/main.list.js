@@ -4,14 +4,19 @@ import PuppyCard from '../../components/puppy-card.component';
 
 export default function List(props)
 {
-	// TODO: update puppyCardArray when we're getting content dynamically
-	const puppyCardArray = [];
+	console.log(props);
+
+	const puppyCardsArray = props.favoritedPuppiesProp || [];
+
+	const puppyCards = puppyCardsArray.map((puppy) => {
+		return <PuppyCard sectionProp={"favorites"} puppyProp={puppy}/>
+	})
 
 	return(
 		<aside className="list">
 			<p className="section-header">{props.accountTypeProp === 'adopter' ? 'favorites' : 'adopt-a-bull-puppies'}</p>
 			<div className="puppies {props.accountTypeProp === 'adopter' ? 'favorite-puppies' : 'adopt-a-bull-puppies'}">
-				<PuppyCard sectionProp={"favorites"}/>
+				{puppyCards}
 			</div>
 			{/*
 				ADOPTERS EDIT

@@ -31,6 +31,8 @@ export class PuppyCard extends Component
 			}
 		}
 
+		const puppyInfo = this.props.sectionProp === 'main' ? this.props.puppyFromState : this.props.puppyProp;
+
 		console.log(this.props.puppyFromState[0] && this.props.puppyFromState[0].name);
 
 		return(
@@ -38,8 +40,8 @@ export class PuppyCard extends Component
 				<div className="puppy-card">
 					<div className="puppy-card-container">
 						<PuppyCardImage />
-						<PuppyCardInfo toggleInfoProp={this.toggleInfoFn} toggleIconProp={this.toggleIconFn()} puppyProp={this.props.puppyFromState} />
-						{this.state.infoExpanded && <PuppyCardInfoExpanded puppyProp={this.props.puppyFromState} />}
+						<PuppyCardInfo toggleInfoProp={this.toggleInfoFn} toggleIconProp={this.toggleIconFn()} puppyProp={puppyInfo} />
+						{this.state.infoExpanded && this.props.sectionProp === 'main' && <PuppyCardInfoExpanded puppyProp={this.props.puppyFromState} />}
 					</div>
 				</div>
 				{/*
