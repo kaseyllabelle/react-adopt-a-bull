@@ -4,7 +4,7 @@ export default function IconButton(props)
 {
 	return(
 		<Fragment>
-			<i className="material-icons" onClick={(e) => {props.toggleInfoPropNested(e)}}>
+			<i className="material-icons puppy-card-icon" onClick={(e) => {props.toggleInfoPropNested(e)}}>
 				{props.toggleIconPropNested}
 			</i>
 			{/*

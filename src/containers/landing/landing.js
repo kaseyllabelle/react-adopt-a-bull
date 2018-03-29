@@ -12,7 +12,6 @@ export class Landing extends React.Component
 		console.log(this.props);
 
 		if (this.props.userIdFromState) {
-			console.log("i exist!");
 			return <Redirect to={`/main/${this.props.userIdFromState}`} />
 		}
 

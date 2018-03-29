@@ -44,8 +44,6 @@ export class PuppyCard extends Component
 				</div>
 				{/*
 					TODO: fix puppy card
-					// <p className="section-header section-header-main">discover puppies</p>
-					// <div className="discovery-wrapper">
 					// 	<div className="puppy-card">
 					// 		<div className="puppy-card-container" data-puppyid="<%=data[0]._id%>">
 					// 			<PuppyCardImage />
@@ -53,7 +51,6 @@ export class PuppyCard extends Component
 					// 			<PuppyCardInfoExpanded />
 					// 		</div>
 					// 	</div>
-					// </div>
 					// <div style="display: none;" className="hidden-puppy" data-nextpuppy="<%= data[2].nextPosition %>">
 					// 	<img src="<%=data[1].photo%>" />
 					// 	<p><%- JSON.stringify(data[1]) %></p>
