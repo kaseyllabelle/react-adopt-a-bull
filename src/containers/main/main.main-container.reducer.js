@@ -1,4 +1,4 @@
-import {GET_PUPPY} from './main.main-container.action';
+import {GET_PUPPY, FAVORITE_PUPPY, RENDER_FAVORITE_PUPPIES} from './main.main-container.action';
 
 const initialState = {
 	puppyFromStore: []

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 
 import List from '../../containers/list/main.list';
 import Main from '../../containers/main/main';
 import Settings from '../../containers/settings/main.settings';
-import {getPuppyAction} from './main.main-container.action';
+import {getPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction} from './main.main-container.action';
 
 export class MainContainer extends React.Component
 {
