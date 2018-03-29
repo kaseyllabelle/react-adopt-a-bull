@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 export default function LogIn(props)
 {
@@ -25,8 +25,8 @@ export default function LogIn(props)
 	</div>)
 
 	return(
-		<div>
+		<Fragment>
 			{props.logInProp ? signInConst : signUpConst}
-		</div>
+		</Fragment>
 	)
 }

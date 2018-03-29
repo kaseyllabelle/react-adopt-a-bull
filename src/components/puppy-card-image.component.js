@@ -9,6 +9,6 @@ export default function PuppyCardImage(props)
 				TODO:
 				// <img src="<%=data[0].photo%>" className="puppy-card-thumbnail" />
 			*/}
-		</ Fragment>
+		</Fragment>
 	)
 }
