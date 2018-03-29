@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 
 import List from '../../containers/list/main.list';
@@ -8,17 +8,39 @@ import {getPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction} from '
 
 export class MainContainer extends React.Component
 {
+	constructor(props) {
+		super(props);
+		this.state = {
+			puppyNum: 0
+		}
+		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
+	}
+
 	componentDidMount() {
+		// TODO:
 		// update to use url
 		// if adopter or shelter
 		getPuppyAction(this.props.dispatch);
+	}
+
+	favoritePuppyFn() {
+		let puppyIdProp = this.props.puppyFromState[0]._id;
+		favoritePuppyAction(this.props.dispatch, puppyIdProp);
+		this.getNextPuppyFn();
+	}
+
+	getNextPuppyFn() {
+		this.setState({
+			puppyNum: this.state.puppyNum++
+		})
+		getPuppyAction(this.props.dispatch, this.state.puppyNum);
 	}
 
 	render() {
 		return(
 			<div className="main-container">
 				<List accountTypeProp={'adopter'} />
-				<Main accountTypeProp={'adopter'} />
+				<Main accountTypeProp={'adopter'} favoritePuppyProp={this.favoritePuppyFn} />
 				<Settings accountTypeProp={'adopter'} />
 			</div>
 		)
@@ -28,7 +50,7 @@ export class MainContainer extends React.Component
 const mapStateToProps = (state) => {
 	console.log(state);
 	return {
-		
+		puppyFromState: state._root.entries[1][1].puppyFromStore
 	}
 }
 

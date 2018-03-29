@@ -1,6 +1,6 @@
 export const GET_PUPPY = 'GET_PUPPY';
-export const getPuppyAction = (dispatch) => {
-	return fetch('http://localhost:8080/api/puppies/1', {
+export const getPuppyAction = (dispatch, puppyNum = 0) => {
+	return fetch(`http://localhost:8080/api/puppies/${puppyNum}`, {
 		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json'
@@ -17,13 +17,17 @@ export const getPuppyAction = (dispatch) => {
 }
 
 export const FAVORITE_PUPPY = 'FAVORITE_PUPPY';
-export const favoritePuppyAction = (dispatch) => {
+export const favoritePuppyAction = (dispatch, puppyId) => {
+	const data = {
+		userId: localStorage.getItem('userId'),
+		puppyId
+	}
 	return fetch('http://localhost:8080/api/favorite/', {
 		method: 'POST',
 		headers: {
-			// do we need to include headers?
 			'Content-Type': 'application/json'
-		}
+		},
+		body: JSON.stringify(data)
 	}).then((obj) => {
 		console.log(obj);
 		return obj.json().then((o) => {
@@ -34,20 +38,6 @@ export const favoritePuppyAction = (dispatch) => {
 		});
 	})
 }
-
-// // favorite puppy
-// $('.favorite').click(function(){
-// 	var puppyId = $('.puppy-card-container').data('puppyid');
-// 	$.ajax({
-// 		method: "POST", 
-// 		url: "/api/favorite/", 
-// 		data: {userId: localStorage.getItem('userId'), 'puppyId': puppyId}})
-// 	.done(function(msg){
-// 		renderFavoritePuppies();
-// 		getPuppies($('.hidden-puppy').data('nextpuppy'), JSON.parse($('.hidden-puppy p').text()));
-// 	});
-// });
-
 
 export const RENDER_FAVORITE_PUPPIES = 'RENDER_FAVORITE_PUPPIES';
 export const renderFavoritePuppiesAction = (dispatch) => {

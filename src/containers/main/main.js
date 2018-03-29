@@ -14,14 +14,17 @@ export default function Main(props)
 					</div>
 				</div>
 				<div className="bottom-nav">
+					{/*
+						TODO: use icon button component for these icon buttons
+					*/}
 					<a className="icon-wrapper next">
 						<i className="material-icons icon-next">close</i>
 					</a>
 					<a className="icon-wrapper mail">
 						<i className="material-icons icon-mail">mail_outline</i>
 					</a>
-					<a className="icon-wrapper favorite">
-						<i className="material-icons icon-favorite" data-puppy-id="">favorite_outline</i>
+					<a className="icon-wrapper favorite" onClick={() => {props.favoritePuppyProp()}}>
+						<i className="material-icons icon-favorite">favorite_outline</i>
 					</a>
 				</div>
 			</div>

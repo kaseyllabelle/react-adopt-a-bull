@@ -36,10 +36,10 @@ export class PuppyCard extends Component
 		return(
 			<Fragment>
 				<div className="puppy-card">
-					<div className="puppy-card-container" puppyIdProp={this.props.puppyFromState[0] && this.props.puppyFromState[0]._id}>
+					<div className="puppy-card-container">
 						<PuppyCardImage />
-						<PuppyCardInfo toggleInfoProp={this.toggleInfoFn} toggleIconProp={this.toggleIconFn()} />
-						{this.state.infoExpanded && <PuppyCardInfoExpanded />}
+						<PuppyCardInfo toggleInfoProp={this.toggleInfoFn} toggleIconProp={this.toggleIconFn()} puppyProp={this.props.puppyFromState} />
+						{this.state.infoExpanded && <PuppyCardInfoExpanded puppyProp={this.props.puppyFromState} />}
 					</div>
 				</div>
 				{/*

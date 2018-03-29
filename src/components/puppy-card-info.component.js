@@ -4,14 +4,18 @@ import IconButton from '../components/icon-button.component';
 
 export default function PuppyCardInfo(props)
 {
-	// console.log(props);
+	console.log(props);
+
+	const puppyNameProp = props.puppyProp["0"] && props.puppyProp["0"].name;
+
 	return(
 		<div className="puppy-card-info">
-			<p className="puppy-card-name">Gus</p>
+			<p className="puppy-card-name">{puppyNameProp}</p>
 			<IconButton toggleInfoPropNested={props.toggleInfoProp} toggleIconPropNested={props.toggleIconProp} />
 			{/*
 				TODO:
 				// <div className="puppy-card-info">
+				puppyName={this.props.puppyFromState[0] && this.props.puppyFromState[0].name}
 				// 	<p className="puppy-card-name"><%=data[0].name%></p>
 				// 	<i className="material-icons puppy-card-icon">info</i>
 				// </div>

@@ -2,14 +2,19 @@ import React from 'react';
 
 export default function PuppyCardInfoExpanded(props)
 {
+	console.log(props);
+
+	const puppyNameProp = props.puppyProp["0"] && props.puppyProp["0"].name;
+
 	return(
 		<div className="puppy-card-expanded">
 			<p className="name">
 				<span className="puppy-card-expanded-label">Name:</span> 
-				<span className="puppy-card-expanded-content">Gus</span>
+				<span className="puppy-card-expanded-content">{puppyNameProp}?</span>
 			</p>
 			<p className="gender">
-				<span className="puppy-card-expanded-label">Gender:</span> 
+				{/* TODO: how do we get make these fields data driven? */}
+				<span className="puppy-card-expanded-label">Gender: </span> 
 				<span className="puppy-card-expanded-content">male</span>
 			</p>
 			{/*
