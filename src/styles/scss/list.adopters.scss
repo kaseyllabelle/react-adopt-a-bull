@@ -7,12 +7,15 @@
 	justify-content: space-evenly;
 }
 
-.puppy-container
+.list
 {
-	margin-bottom: 30px;
-	border-radius: 3px;
-	background-color: $amber700;
-	text-align: left;
+	.puppy-card
+	{
+		margin-bottom: 30px;
+		border-radius: 3px;
+		background-color: $amber700;
+		text-align: left;
+	}
 }
 
 .puppy-thumbnail
