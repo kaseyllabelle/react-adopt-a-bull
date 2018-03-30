@@ -49,7 +49,7 @@ export class MainContainer extends React.Component
 }
 
 const mapStateToProps = (state) => {
-	console.log(state);
+	// console.log(state);
 	return {
 		puppyFromState: state._root.entries[1][1].puppyFromStore,
 		favoritedPuppiesFromState: state._root.entries[1][1].favoritePuppiesFromStore.favoritePuppies

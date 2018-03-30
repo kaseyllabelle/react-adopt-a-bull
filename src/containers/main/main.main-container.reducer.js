@@ -10,7 +10,7 @@ export default function mainContainerReducer(state=initialState, action) {
 		return {...state, puppyFromStore: action.payload};
 	}
 	if (action.type === RENDER_FAVORITE_PUPPIES) {
-		console.log(action);
+		// console.log(action);
 		return  {...state, favoritePuppiesFromStore: action.payload};
 	}
 	else {

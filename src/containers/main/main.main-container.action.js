@@ -6,7 +6,7 @@ export const getPuppyAction = (dispatch, puppyNum = 0) => {
 			'Content-Type': 'application/json'
 		}
 	}).then((obj) => {
-		console.log(obj);
+		// console.log(obj);
 		return obj.json().then((o) => {
 			return dispatch({
 				type: GET_PUPPY,
@@ -29,7 +29,7 @@ export const favoritePuppyAction = (dispatch, puppyId) => {
 		},
 		body: JSON.stringify(data)
 	}).then((obj) => {
-		console.log(obj);
+		// console.log(obj);
 		return obj.json().then((o) => {
 			return dispatch({
 				type: FAVORITE_PUPPY,
@@ -47,7 +47,7 @@ export const renderFavoritePuppiesAction = (dispatch) => {
 			'Content-Type': 'application/json'
 		}
 	}).then((obj) => {
-		console.log(obj);
+		// console.log(obj);
 		return obj.json().then((o) => {
 			return dispatch({
 				type: RENDER_FAVORITE_PUPPIES,

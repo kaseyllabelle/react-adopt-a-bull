@@ -4,7 +4,7 @@ import PuppyCard from '../../components/puppy-card.component';
 
 export default function List(props)
 {
-	console.log(props);
+	// console.log(props);
 
 	const puppyCardsArray = props.favoritedPuppiesProp || [];
 

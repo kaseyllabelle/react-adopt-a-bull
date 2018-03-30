@@ -33,7 +33,7 @@ export class PuppyCard extends Component
 
 		const puppyInfo = this.props.sectionProp === 'main' ? this.props.puppyFromState : this.props.puppyProp;
 
-		console.log(this.props.puppyFromState[0] && this.props.puppyFromState[0].name);
+		// console.log(this.props.puppyFromState[0] && this.props.puppyFromState[0].name);
 
 		return(
 			<Fragment>
@@ -64,7 +64,7 @@ export class PuppyCard extends Component
 }
 
 const mapStateToProps = (state) => {
-	console.log(state);
+	// console.log(state);
 	return {
 		puppyFromState: state._root.entries[1][1].puppyFromStore
 	}
