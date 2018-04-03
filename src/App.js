@@ -6,7 +6,7 @@ import Landing from './containers/landing/landing';
 import MainContainer from './containers/main/main.main-container';
 
 const App = () => (
-  <Fragment> {/* use Fragment or empty tags as wrappers to avoid extra divs: <> </> */}
+  <Fragment>
     <Route path="/" component={Header} />
     <Route path="/main/:id" component={MainContainer} />
     <Route exact path="/" component={Landing} signUp={true}/>

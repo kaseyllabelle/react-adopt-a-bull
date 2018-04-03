@@ -12,7 +12,7 @@ export const signInAction = (dispatch, email, password) => {
 		password
 	});
 	// MAKE SURE TO UPDATE LOCALHOST OR WE CAN'T SEE PUPPIES AND THAT IS SAD
-	return fetch('http://localhost:8080/user/sign-in/', {
+	return fetch(window.API_URL + '/user/sign-in/', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'

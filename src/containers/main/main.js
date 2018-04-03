@@ -31,26 +31,7 @@ export default function Main(props)
 			</div>
 		{/*
 			TODO: 
-
-			ADOPTERS
-			<section class="main js-main-adopters">
-				<div class="main-inner">
-					<div class="js-puppy-card">
-					</div>
-					<div class="bottom-nav">
-						<a class="icon-wrapper next">
-							<i class="material-icons icon-next">close</i>
-						</a>
-						<a class="icon-wrapper mail">
-							<i class="material-icons icon-mail">mail_outline</i>
-						</a>
-						<a class="icon-wrapper favorite">
-							<i class="material-icons icon-favorite" data-puppy-id="">favorite_outline</i>
-						</a>
-					</div>
-				</div>
-			</section>
-
+			
 			SHELTERS
 			<section class="main">
 				<p class="section-header section-header-main">add puppy</p>
