@@ -31,10 +31,11 @@ export const favoritePuppyAction = (dispatch, puppyId) => {
 	}).then((obj) => {
 		// console.log(obj);
 		return obj.json().then((o) => {
-			return dispatch({
-				type: FAVORITE_PUPPY,
-				payload: o
-			})
+			// return dispatch({
+			// 	type: FAVORITE_PUPPY,
+			// 	payload: puppyId
+			// })
+			renderFavoritePuppiesAction(dispatch)
 		});
 	})
 }
