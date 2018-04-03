@@ -39,7 +39,7 @@ export class PuppyCard extends Component
 			<Fragment>
 				<div className="puppy-card">
 					<div className="puppy-card-container">
-						<PuppyCardImage />
+						<PuppyCardImage puppyProp={puppyInfo} />
 						<PuppyCardInfo toggleInfoProp={this.toggleInfoFn} toggleIconProp={this.toggleIconFn()} puppyProp={puppyInfo} />
 						{this.state.infoExpanded && this.props.sectionProp === 'main' && <PuppyCardInfoExpanded puppyProp={this.props.puppyFromState} />}
 					</div>
