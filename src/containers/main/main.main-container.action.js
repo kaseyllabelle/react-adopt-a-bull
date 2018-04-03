@@ -38,7 +38,7 @@ export const favoritePuppyAction = (dispatch, puppyId) => {
 
 export const RENDER_FAVORITE_PUPPIES = 'RENDER_FAVORITE_PUPPIES';
 export const renderFavoritePuppiesAction = (dispatch) => {
-	return fetch(window.API_URL + `api/adopters/${localStorage.getItem('userId')}`, {
+	return fetch(window.API_URL + `/api/adopters/${localStorage.getItem('userId')}`, {
 		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json'
