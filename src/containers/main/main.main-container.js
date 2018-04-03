@@ -14,6 +14,7 @@ export class MainContainer extends React.Component
 			puppyNum: 0
 		}
 		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
+		this.getNextPuppyFn = this.getNextPuppyFn.bind(this);
 	}
 
 	componentDidMount() {
@@ -25,7 +26,7 @@ export class MainContainer extends React.Component
 	}
 
 	favoritePuppyFn() {
-		let puppyIdProp = this.props.puppyFromState[0]._id;
+		let puppyIdProp = this.props.puppyFromState[0]._id; 
 		favoritePuppyAction(this.props.dispatch, puppyIdProp);
 		this.getNextPuppyFn();
 	}
@@ -38,10 +39,13 @@ export class MainContainer extends React.Component
 	}
 
 	render() {
+
+		const shelterEmail = (this.props.puppyFromState["0"] && this.props.puppyFromState["0"].shelterId.email) || "";
+
 		return(
 			<div className="main-container">
 				{this.props.favoritedPuppiesFromState && <List accountTypeProp={'adopter'} favoritedPuppiesProp={this.props.favoritedPuppiesFromState} />}
-				<Main accountTypeProp={'adopter'} favoritePuppyProp={this.favoritePuppyFn} />
+				<Main accountTypeProp={'adopter'} nextPuppyProp={this.getNextPuppyFn} emailShelterProp={shelterEmail} favoritePuppyProp={this.favoritePuppyFn} />
 				<Settings accountTypeProp={'adopter'} />
 			</div>
 		)

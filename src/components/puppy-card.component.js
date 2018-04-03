@@ -42,20 +42,6 @@ export class PuppyCard extends Component
 						{this.state.infoExpanded && this.props.sectionProp === 'main' && <PuppyCardInfoExpanded puppyProp={this.props.puppyFromState} />}
 					</div>
 				</div>
-				{/*
-					TODO: fix puppy card
-					// 	<div className="puppy-card">
-					// 		<div className="puppy-card-container" data-puppyid="<%=data[0]._id%>">
-					// 			<PuppyCardImage />
-					// 			<PuppyCardInfo />
-					// 			<PuppyCardInfoExpanded />
-					// 		</div>
-					// 	</div>
-					// <div style="display: none;" className="hidden-puppy" data-nextpuppy="<%= data[2].nextPosition %>">
-					// 	<img src="<%=data[1].photo%>" />
-					// 	<p><%- JSON.stringify(data[1]) %></p>
-					// </div>
-				*/}
 			</Fragment>
 		)
 	}

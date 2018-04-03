@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 import PuppyCard from '../../components/puppy-card.component';
 
@@ -17,10 +18,10 @@ export default function Main(props)
 					{/*
 						TODO: use icon button component for these icon buttons
 					*/}
-					<a className="icon-wrapper next">
+					<a className="icon-wrapper next" onClick={() => {props.nextPuppyProp()}}>
 						<i className="material-icons icon-next">close</i>
 					</a>
-					<a className="icon-wrapper mail">
+					<a href={"mailto:" + props.emailShelterProp} className="icon-wrapper mail">
 						<i className="material-icons icon-mail">mail_outline</i>
 					</a>
 					<a className="icon-wrapper favorite" onClick={() => {props.favoritePuppyProp()}}>
