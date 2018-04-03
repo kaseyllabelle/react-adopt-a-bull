@@ -2,6 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 
 const {Adopters} = require('../models/adopters.model');
 const {Puppies} = require('../models/puppies.model');
@@ -143,7 +144,7 @@ router.post('/favorite', (req, res) => {
 		Adopters
 		.findByIdAndUpdate(data.adopterId, 
 		{ 
-			$push:{'favoritePuppies' : req.body.puppyId}
+			$addToSet:{'favoritePuppies' : req.body.puppyId}
 		}, 
 		{
 			safe: true, 
