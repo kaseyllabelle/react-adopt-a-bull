@@ -11,7 +11,6 @@ export const signInAction = (dispatch, email, password) => {
 		email, 
 		password
 	});
-	// MAKE SURE TO UPDATE LOCALHOST OR WE CAN'T SEE PUPPIES AND THAT IS SAD
 	return fetch(window.API_URL + '/user/sign-in/', {
 		method: 'POST',
 		headers: {
