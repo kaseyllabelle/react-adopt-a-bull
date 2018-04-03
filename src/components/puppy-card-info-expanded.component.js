@@ -22,9 +22,6 @@ export default function PuppyCardInfoExpanded(props)
 	const puppyShelterTelephoneProp =  props.puppyProp["0"] && props.puppyProp["0"].shelterId.telephone;
 	const puppyShelterEmailProp =  props.puppyProp["0"] && props.puppyProp["0"].shelterId.email;
 
-	// TODO:
-	// wrap characteristics in conditionals
-
 	return(
 		<div className="puppy-card-expanded">
 			{puppyNameProp.length > 0 &&
