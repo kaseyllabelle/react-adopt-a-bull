@@ -4,7 +4,7 @@ import IconButton from '../components/icon-button.component';
 
 export default function PuppyCardInfo(props)
 {
-	console.log(props);
+	// console.log(props);
 
 	let puppyNameProp;
 
