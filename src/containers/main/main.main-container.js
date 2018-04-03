@@ -33,7 +33,7 @@ export class MainContainer extends React.Component
 
 	getNextPuppyFn() {
 		this.setState({
-			puppyNum: this.state.puppyNum++
+			puppyNum: this.state.puppyNum + 1
 		})
 		getPuppyAction(this.props.dispatch, this.state.puppyNum);
 	}

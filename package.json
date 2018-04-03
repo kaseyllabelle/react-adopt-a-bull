@@ -25,7 +25,7 @@
     "react-test-renderer": "^16.2.0"
   },
   "scripts": {
-    "sass-watch": "scss --watch ./src/styles/scss:./src/styles/css",
+    "sass-watch": "scss --watch ./src/styles/scss:./public/static/css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

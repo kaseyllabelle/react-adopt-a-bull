@@ -21,7 +21,7 @@ export class Landing extends React.Component
 
 		this.signInFn = (e) => {
 			e.preventDefault();
-			console.log(e);
+			// console.log(e);
 			const email = document.getElementById("email").value;
 			const password = document.getElementById("password").value;
 			signInAction(this.props.dispatch, email, password);
@@ -61,7 +61,7 @@ export class Landing extends React.Component
 }
 
 const mapStateToProps = (state) => {
-	console.log(state);
+	// console.log(state);
 	return {
 		logInFromState: state._root.entries["0"][1].logInFromStore,
 		userIdFromState: state._root.entries["0"][1].userIdFromStore
