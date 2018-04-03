@@ -16,10 +16,6 @@ export default function PuppyCardImage(props)
 	return(
 		<Fragment>
 			<img src={puppyImageProp} className="puppy-card-thumbnail" alt="puppy"/>
-			{/*
-				TODO:
-				// <img src="<%=data[0].photo%>" className="puppy-card-thumbnail" />
-			*/}
 		</Fragment>
 	)
 }
