@@ -13,7 +13,8 @@
 	background: $grey200;	
 }
 
-body
+body,
+#root
 {
 	height: 100vh;
 	margin: 0 auto;
@@ -74,7 +75,7 @@ button[type="submit"]
 	padding: 10px;
 	background-color: $amber700;
 	color: $white;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	text-transform: uppercase;
 }
 

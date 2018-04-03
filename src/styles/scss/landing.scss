@@ -1,0 +1,69 @@
+@import "_globals.scss";
+
+.landing-container
+{
+	display: flex;
+	height: 100%;
+	margin-top: -75px;
+	padding-top: 75px;
+}
+
+.landing-image,
+.log-in
+{
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+}
+
+.landing-image
+{
+	flex-basis: 60%;
+	align-items: center;
+	background-image: url("/images/landing.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.description
+{
+	text-align: left;
+}
+
+.log-in
+{
+	flex-basis: 40%;
+}
+
+.sign-up-sign-in
+{
+	margin-bottom: 35px;
+}
+
+a.forgot-password
+{
+	position: absolute;
+	margin: -23px 0 40px 0;
+	font-size: 12px;
+}
+
+@media all and (max-width: 767px) {
+	.landing-container
+	{
+		height: auto;
+		flex-direction: column;
+	}
+
+	.landing-image
+	{
+		min-height: 300px;
+	}
+	
+	.log-in
+	{
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: auto;
+	}
+}

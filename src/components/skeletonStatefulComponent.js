@@ -21,10 +21,12 @@ export default class SkeletonStatefulComponent extends Component
 
   render()
   {
-    return(<div>
+    return(
+    <div>
       <h2>Hi mom</h2>
       <p>Look what I can do <em>{this.props.propExample}</em></p>
-    </div>)
+    </div>
+    )
   }
 }
 
