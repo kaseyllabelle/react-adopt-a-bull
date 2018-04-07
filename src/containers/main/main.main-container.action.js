@@ -1,4 +1,5 @@
 export const GET_PUPPY = 'GET_PUPPY';
+export const NO_MORE_PUPPIES = 'NO_MORE_PUPPIES';
 export const getPuppyAction = (dispatch, puppyNum = 0) => {
 	return fetch(window.API_URL + `/api/puppies/${localStorage.getItem('adopterId')}/${puppyNum}`, {
 		method: 'GET',
@@ -7,6 +8,11 @@ export const getPuppyAction = (dispatch, puppyNum = 0) => {
 		}
 	}).then((obj) => {
 		console.log(obj);
+		if(obj.status === 416) {
+			return dispatch({
+				type: NO_MORE_PUPPIES
+			})
+		}
 		if(obj.status === 303) {
 			getPuppyAction(dispatch, ++ puppyNum);
 			return false;

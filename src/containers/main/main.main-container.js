@@ -39,7 +39,8 @@ export class MainContainer extends React.Component
 		return(
 			<div className="main-container">
 				{this.props.favoritedPuppiesFromState && <List accountTypeProp={'adopter'} favoritedPuppiesProp={this.props.favoritedPuppiesFromState} />}
-				<Main accountTypeProp={'adopter'} nextPuppyProp={this.getNextPuppyFn} emailShelterProp={shelterEmail} favoritePuppyProp={this.favoritePuppyFn} />
+				{!this.props.noMorePuppiesFromState && <Main accountTypeProp={'adopter'} nextPuppyProp={this.getNextPuppyFn} emailShelterProp={shelterEmail} favoritePuppyProp={this.favoritePuppyFn} />}
+				{this.props.noMorePuppiesFromState && <div>No more puppies</div>}
 				<Settings accountTypeProp={'adopter'} />
 			</div>
 		)
@@ -51,7 +52,8 @@ const mapStateToProps = (state) => {
 	return {
 		puppyNum: state._root.entries[1][1].puppyNumFromStore,
 		puppyFromState: state._root.entries[1][1].puppyFromStore,
-		favoritedPuppiesFromState: state._root.entries[1][1].favoritePuppiesFromStore.favoritePuppies
+		favoritedPuppiesFromState: state._root.entries[1][1].favoritePuppiesFromStore.favoritePuppies,
+		noMorePuppiesFromState: state._root.entries[1][1].noMorePuppiesFromStore
 	}
 }
 
