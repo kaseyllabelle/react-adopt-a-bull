@@ -8,7 +8,7 @@ const initialState = {
 
 export default function mainContainerReducer(state=initialState, action) {
 	if (action.type === GET_PUPPY) {
-		return {...state, puppyNumFromStore: state.puppyNumFromStore + 1, puppyFromStore: action.payload};
+		return {...state, puppyNumFromStore: action.puppyNum + 1, puppyFromStore: action.payload};
 	}
 	if (action.type === RENDER_FAVORITE_PUPPIES) {
 		console.log(action);

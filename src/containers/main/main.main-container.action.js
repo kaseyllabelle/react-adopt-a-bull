@@ -1,16 +1,21 @@
 export const GET_PUPPY = 'GET_PUPPY';
 export const getPuppyAction = (dispatch, puppyNum = 0) => {
-	return fetch(window.API_URL + `/api/puppies/${puppyNum}`, {
+	return fetch(window.API_URL + `/api/puppies/${localStorage.getItem('adopterId')}/${puppyNum}`, {
 		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json'
 		}
 	}).then((obj) => {
-		// console.log(obj);
+		console.log(obj);
+		if(obj.status === 303) {
+			getPuppyAction(dispatch, ++ puppyNum);
+			return false;
+		}
 		return obj.json().then((o) => {
 			return dispatch({
 				type: GET_PUPPY,
-				payload: o
+				payload: o,
+				puppyNum
 			})
 		});
 	})
