@@ -10,9 +10,6 @@ export class MainContainer extends React.Component
 {
 	constructor(props) {
 		super(props);
-		this.state = {
-			puppyNum: 0
-		}
 		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
 		this.getNextPuppyFn = this.getNextPuppyFn.bind(this);
 	}
@@ -32,10 +29,7 @@ export class MainContainer extends React.Component
 	}
 
 	getNextPuppyFn() {
-		this.setState({
-			puppyNum: this.state.puppyNum + 1
-		})
-		getPuppyAction(this.props.dispatch, this.state.puppyNum);
+		getPuppyAction(this.props.dispatch, this.props.puppyNum);
 	}
 
 	render() {
@@ -55,6 +49,7 @@ export class MainContainer extends React.Component
 const mapStateToProps = (state) => {
 	// console.log(state);
 	return {
+		puppyNum: state._root.entries[1][1].puppyNumFromStore,
 		puppyFromState: state._root.entries[1][1].puppyFromStore,
 		favoritedPuppiesFromState: state._root.entries[1][1].favoritePuppiesFromStore.favoritePuppies
 	}
