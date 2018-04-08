@@ -47,6 +47,22 @@ export const addPuppyAction = (dispatch, puppyJSON) => {
 	})
 }
 
+
+// { shelterID: null,
+//   puppyJSON: '{
+//   	"image":{},
+//   	"name":"test",
+//   	"gender":"female",
+//   	"age":"puppy",
+//   	"size":"S",
+//   	"training":"needs training",
+//   	"characteristics":"house-broken",
+//   	"compatibility":"apartments",
+//   	"biography":"test",
+//   	"adoption-fee":"test"
+//   }' 
+// }
+
 // // create puppy
 // router.post('/puppies', (req, res) => {
 // 	const requiredFields = ['photo', 'name', 'gender', 'age', 'size', 'shelterId', 'distance'];
