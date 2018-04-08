@@ -1,7 +1,8 @@
 export const TOGGLE_LOG_IN = 'TOGGLE_LOG_IN';
-export const toggleLogInAction = (dispatch) => {
+export const toggleLogInAction = (dispatch, logIn) => {
 	return dispatch({
-		type: TOGGLE_LOG_IN
+		type: TOGGLE_LOG_IN,
+		payload: logIn
 	});
 };
 

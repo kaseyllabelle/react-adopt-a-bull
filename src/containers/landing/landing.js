@@ -11,15 +11,13 @@ export class Landing extends React.Component
 
 		// console.log(this.props);
 
-		// TODO:
-		// fix toggle sign in/up
-
 		if (this.props.userIdFromState) {
 			return <Redirect to={`/main/${this.props.userIdFromState}`} />
 		}
 
-		this.toggleLogInFn = () => {
-			toggleLogInAction(this.props.dispatch);
+		this.toggleLogInFn = (e) => {
+			console.log(e.target);
+			toggleLogInAction(this.props.dispatch, e.target.id);
 		}
 
 		this.signInFn = (e) => {

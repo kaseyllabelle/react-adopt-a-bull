@@ -6,7 +6,7 @@ const initialState = {
 
 export default function landingReducer(state=initialState, action) {
 	if (action.type === TOGGLE_LOG_IN) {
-		return {...state, logInFromStore: !state.logInFromStore};
+		return {...state, logInFromStore: action.payload === "btn-sign-up" ? false : true};
 	}
 	if (action.type === SIGN_IN) {
 		console.log(action.payload);
@@ -19,3 +19,4 @@ export default function landingReducer(state=initialState, action) {
 		return state;
 	}
 };
+
