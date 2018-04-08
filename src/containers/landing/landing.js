@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
 import LogIn from '../../components/log-in.component';
-import {toggleLogInAction, signInAction} from './landing.action';
+import {toggleLogInAction, signInAction, signUpAction} from './landing.action';
 
 export class Landing extends React.Component
 {
@@ -26,6 +26,15 @@ export class Landing extends React.Component
 			const email = document.getElementById("email").value;
 			const password = document.getElementById("password").value;
 			signInAction(this.props.dispatch, email, password);
+		}
+
+		this.signUpFn = (e) => {
+			e.preventDefault();
+			const email = document.getElementById("email").value;
+			const password = document.getElementById("password").value;
+			const userType = document.querySelector(`input[name="user-type"]:checked`).value;
+			// console.log(userType);
+			signUpAction(this.props.dispatch, email, password, userType);
 		}
 
 		return(
@@ -53,7 +62,7 @@ export class Landing extends React.Component
 							<label htmlFor="password">password:</label>
 							<input type="password" name="password" id="password" autoComplete="current-password" required/>
 						</div>
-						<LogIn logInProp={this.props.logInFromState} signInProp={this.signInFn} />
+						<LogIn logInProp={this.props.logInFromState} signInProp={this.signInFn} signUpProp={this.signUpFn}/>
 					</form>
 				</aside>
 			</div>

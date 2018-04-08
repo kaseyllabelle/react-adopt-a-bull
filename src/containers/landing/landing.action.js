@@ -28,3 +28,22 @@ export const signInAction = (dispatch, email, password) => {
 		});
 	});
 };
+
+export const SIGN_UP = 'SIGN_UP';
+export const signUpAction = (dispatch, email, password, userType) => {
+	const data = JSON.stringify({
+		email, 
+		password,
+		"user-type": userType
+	});
+	return fetch(window.API_URL + '/user/', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: data
+	}).then((obj) => {
+		console.log(obj);
+		window.location.href = '/'
+	});
+};

@@ -8,7 +8,7 @@ export default function LogIn(props)
 				<label>account type:</label>
 				<div className="radio-button-bar">
 					<div className="radio-button-wrapper">
-						<input type="radio" className="radio-button" id="user-type-shelter" name="user-type" value="shelter" disabled/>
+						<input type="radio" className="radio-button" id="user-type-shelter" name="user-type" value="shelter"/>
 						<label htmlFor="user-type-shelter" className="radio-button-label radio-button-label-left">Shelter</label>
 					</div>
 					<div className="radio-button-wrapper">
@@ -17,7 +17,7 @@ export default function LogIn(props)
 					</div>
 				</div>
 			</div>
-			<button type="submit" className="button">Create Account</button>
+			<button type="submit" className="button" onClick={(e) => {props.signUpProp(e)}}>Create Account</button>
 		</div>
 	)
 
