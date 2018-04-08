@@ -6,14 +6,14 @@ export default function AddPuppy(props)
 		<Fragment>
 			<section className="main">
 				<p className="section-header section-header-main">add puppy</p>
-				<form>
+				<form id="add-puppy">
 					<div className="form-input">
 						<label htmlFor="image">Upload profile photo</label>
 						<input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" required />
 					</div>
 					<div className="form-input">
 						<label>name:</label>
-						<input type="text" required />
+						<input type="text" name="name" required />
 					</div>
 					<div className="form-input">
 						<label>gender:</label>
@@ -139,13 +139,13 @@ export default function AddPuppy(props)
 					</div>
 					<div className="form-input">
 						<label>biography:</label>
-						<input type="text"/>
+						<input name="biography" type="text"/>
 					</div>
 					<div className="form-input">
 						<label>adoption fee:</label>
-						<input type="text"/>
+						<input name="adoption-fee" type="text"/>
 					</div>
-					<button type="submit" className="button">Add Puppy</button>
+					<button type="submit" className="button" onClick={(e) => {props.addPuppyNestedProp(e)}}>Add Puppy</button>
 				</form>
 			</section>
 		</Fragment>

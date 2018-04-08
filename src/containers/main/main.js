@@ -7,7 +7,7 @@ export default function Main(props)
 {
 	return(
 		<section className="main">
-			{props.accountTypeProp === "shelter" && <AddPuppy/>}
+			{props.accountTypeProp === "shelter" && <AddPuppy addPuppyNestedProp={props.addPuppyProp}/>}
 			{props.accountTypeProp === "adopter" && 
 				<div className="main-inner">
 					<div className="js-puppy-card">

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import List from '../../containers/list/main.list';
 import Main from '../../containers/main/main';
 import Settings from '../../containers/settings/main.settings';
-import {getPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction} from './main.main-container.action';
+import {getPuppyAction, addPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction} from './main.main-container.action';
 
 export class MainContainer extends React.Component
 {
@@ -14,6 +14,7 @@ export class MainContainer extends React.Component
 		this.state.accountTypeComponentProp = localStorage.getItem("adopterId") !== "null" ? "adopter" : "shelter";
 		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
 		this.getNextPuppyFn = this.getNextPuppyFn.bind(this);
+		this.addPuppyFn = this.addPuppyFn.bind(this);
 	}
 
 	componentDidMount() {
@@ -22,6 +23,18 @@ export class MainContainer extends React.Component
 			getPuppyAction(this.props.dispatch);
 			renderFavoritePuppiesAction(this.props.dispatch);
 		}
+	}
+
+	addPuppyFn(e) {
+		e.preventDefault();
+		const addPuppyForm = document.getElementById("add-puppy");
+		const addPuppyFormData = new FormData(addPuppyForm);
+		let puppyJSON = {};
+		for(var pair of addPuppyFormData.entries()) { 
+			puppyJSON[pair[0]] = pair[1];
+		}
+		puppyJSON = (JSON.stringify(puppyJSON));
+		addPuppyAction(this.props.dispatch, puppyJSON);
 	}
 
 	favoritePuppyFn() {
@@ -50,6 +63,7 @@ export class MainContainer extends React.Component
 						nextPuppyProp={this.getNextPuppyFn} 
 						emailShelterProp={shelterEmail} 
 						favoritePuppyProp={this.favoritePuppyFn}
+						addPuppyProp={this.addPuppyFn}
 					/>
 				}
 				{this.props.noMorePuppiesFromState && 
