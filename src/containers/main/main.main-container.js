@@ -15,11 +15,11 @@ export class MainContainer extends React.Component
 	}
 
 	componentDidMount() {
-		// TODO:
-		// update to use url
-		// if adopter or shelter
-		getPuppyAction(this.props.dispatch);
-		renderFavoritePuppiesAction(this.props.dispatch);
+		if(localStorage.getItem("adopterId") !== "null"){
+			console.log(localStorage.getItem("adopterId").length);
+			getPuppyAction(this.props.dispatch);
+			renderFavoritePuppiesAction(this.props.dispatch);
+		}
 	}
 
 	favoritePuppyFn() {
