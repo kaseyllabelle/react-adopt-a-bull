@@ -11,6 +11,9 @@ export default function Main(props)
 					<p className="section-header section-header-main">discover puppies</p>
 					<div className="discovery-wrapper">
 						<PuppyCard sectionProp="main"/>
+						{/*
+							TODO: put no more puppies here instead of in main container
+						*/}
 					</div>
 				</div>
 				<div className="bottom-nav">

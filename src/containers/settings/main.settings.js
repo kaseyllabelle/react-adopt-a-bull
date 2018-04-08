@@ -4,10 +4,24 @@ export default function Settings(props)
 {
 	return(
 		<aside className="settings">
-			{/* TODO: integrate google maps */}
+			{/* TODO: integrate location services */}
 			<p className="section-header">settings</p>
 			<div>
-				<p>Coming soon!</p>
+				{/*<p>Coming soon!</p>*/}
+				<div className="discovery discovery-settings">
+					<p>discovery settings <i className="material-icons">edit</i></p>
+					<p>location</p>
+					<p>maximum distance</p>
+					<p>gender</p>
+					<p>age</p>
+					<p>size</p>
+				</div>
+				<div className="account-settings">
+					<p>account settings <i className="material-icons">edit</i></p>
+					<p>log out</p>
+					<p>reset password</p>
+					<p>delete account</p>
+				</div>
 				{/*
 					ADOPTERS
 					<aside class="settings">

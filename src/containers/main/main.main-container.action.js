@@ -7,7 +7,7 @@ export const getPuppyAction = (dispatch, puppyNum = 0) => {
 			'Content-Type': 'application/json'
 		}
 	}).then((obj) => {
-		console.log(obj);
+		// console.log(obj);
 		if(obj.status === 416) {
 			return dispatch({
 				type: NO_MORE_PUPPIES

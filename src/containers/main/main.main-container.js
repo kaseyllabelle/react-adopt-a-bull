@@ -40,7 +40,7 @@ export class MainContainer extends React.Component
 			<div className="main-container">
 				{this.props.favoritedPuppiesFromState && <List accountTypeProp={'adopter'} favoritedPuppiesProp={this.props.favoritedPuppiesFromState} />}
 				{!this.props.noMorePuppiesFromState && <Main accountTypeProp={'adopter'} nextPuppyProp={this.getNextPuppyFn} emailShelterProp={shelterEmail} favoritePuppyProp={this.favoritePuppyFn} />}
-				{this.props.noMorePuppiesFromState && <div>No more puppies</div>}
+				{this.props.noMorePuppiesFromState && <div className="discovery-wrapper">There are no more adopt-a-bull puppies around you.<br/>Try adjusting your discovery settings.</div>}
 				<Settings accountTypeProp={'adopter'} />
 			</div>
 		)
