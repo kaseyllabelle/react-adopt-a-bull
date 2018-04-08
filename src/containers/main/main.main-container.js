@@ -10,6 +10,8 @@ export class MainContainer extends React.Component
 {
 	constructor(props) {
 		super(props);
+		this.state = {};
+		this.state.accountTypeComponentProp = localStorage.getItem("adopterId") !== "null" ? "adopter" : "shelter";
 		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
 		this.getNextPuppyFn = this.getNextPuppyFn.bind(this);
 	}
@@ -38,10 +40,25 @@ export class MainContainer extends React.Component
 
 		return(
 			<div className="main-container">
-				{this.props.favoritedPuppiesFromState && <List accountTypeProp={'adopter'} favoritedPuppiesProp={this.props.favoritedPuppiesFromState} />}
-				{!this.props.noMorePuppiesFromState && <Main accountTypeProp={'adopter'} nextPuppyProp={this.getNextPuppyFn} emailShelterProp={shelterEmail} favoritePuppyProp={this.favoritePuppyFn} />}
-				{this.props.noMorePuppiesFromState && <div className="discovery-wrapper">There are no more adopt-a-bull puppies around you.<br/>Try adjusting your discovery settings.</div>}
-				<Settings accountTypeProp={'adopter'} />
+				<List 
+					accountTypeProp={this.state.accountTypeComponentProp} 
+					favoritedPuppiesProp={this.props.favoritedPuppiesFromState} 
+				/>
+				{!this.props.noMorePuppiesFromState && 
+					<Main 
+						accountTypeProp={this.state.accountTypeComponentProp} 
+						nextPuppyProp={this.getNextPuppyFn} 
+						emailShelterProp={shelterEmail} 
+						favoritePuppyProp={this.favoritePuppyFn}
+					/>
+				}
+				{this.props.noMorePuppiesFromState && 
+					<div className="discovery-wrapper">
+						There are no more adopt-a-bull puppies around you.<br/>
+						Try adjusting your discovery settings.
+					</div>
+				}
+				<Settings accountTypeProp={this.state.accountTypeComponentProp} />
 			</div>
 		)
 	}
