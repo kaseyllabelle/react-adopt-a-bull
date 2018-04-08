@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
 import LogIn from '../../components/log-in.component';
-import {toggleLogInAction, signInAction, signUpAction} from './landing.action';
+import {toggleLogInAction, signUpAction, signInAction} from './landing.action';
 
 export class Landing extends React.Component
 {
@@ -20,14 +20,6 @@ export class Landing extends React.Component
 			toggleLogInAction(this.props.dispatch, e.target.id);
 		}
 
-		this.signInFn = (e) => {
-			e.preventDefault();
-			// console.log(e);
-			const email = document.getElementById("email").value;
-			const password = document.getElementById("password").value;
-			signInAction(this.props.dispatch, email, password);
-		}
-
 		this.signUpFn = (e) => {
 			e.preventDefault();
 			const email = document.getElementById("email").value;
@@ -35,6 +27,14 @@ export class Landing extends React.Component
 			const userType = document.querySelector(`input[name="user-type"]:checked`).value;
 			// console.log(userType);
 			signUpAction(this.props.dispatch, email, password, userType);
+		}
+
+		this.signInFn = (e) => {
+			e.preventDefault();
+			// console.log(e);
+			const email = document.getElementById("email").value;
+			const password = document.getElementById("password").value;
+			signInAction(this.props.dispatch, email, password);
 		}
 
 		return(
@@ -62,7 +62,7 @@ export class Landing extends React.Component
 							<label htmlFor="password">password:</label>
 							<input type="password" name="password" id="password" autoComplete="current-password" required/>
 						</div>
-						<LogIn logInProp={this.props.logInFromState} signInProp={this.signInFn} signUpProp={this.signUpFn}/>
+						<LogIn logInProp={this.props.logInFromState} signUpProp={this.signUpFn} signInProp={this.signInFn}/>
 					</form>
 				</aside>
 			</div>
