@@ -6,7 +6,7 @@ export default function List(props)
 {
 	// console.log(props);
 
-	const puppyCardsArray = props.favoritedPuppiesProp || [];
+	const puppyCardsArray = props.favoritedPuppiesProp || props.adoptabullPuppiesProp || [];
 
 	const puppyCards = puppyCardsArray.map((puppy) => {
 		return <PuppyCard key={puppy._id} sectionProp={"favorites"} puppyProp={puppy}/>

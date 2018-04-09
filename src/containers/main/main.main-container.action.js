@@ -42,7 +42,7 @@ export const addPuppyAction = (dispatch, puppyJSON) => {
 	}).then((obj) => {
 		// console.log(obj);
 		return obj.json().then((o) => {
-			renderFavoritePuppiesAction(dispatch)
+			renderAdoptabullPuppiesAction(dispatch)
 		});
 	})
 }
@@ -79,6 +79,24 @@ export const renderFavoritePuppiesAction = (dispatch) => {
 		return obj.json().then((o) => {
 			return dispatch({
 				type: RENDER_FAVORITE_PUPPIES,
+				payload: o
+			})
+		});
+	})
+}
+
+export const RENDER_ADOPTABULL_PUPPIES = 'RENDER_ADOPTABULL_PUPPIES';
+export const renderAdoptabullPuppiesAction = (dispatch) => {
+	return fetch(window.API_URL + `/api/shelters/${localStorage.getItem('shelterId')}`, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}).then((obj) => {
+		return obj.json().then((o) => {
+		console.log(o);
+			return dispatch({
+				type: RENDER_ADOPTABULL_PUPPIES,
 				payload: o
 			})
 		});

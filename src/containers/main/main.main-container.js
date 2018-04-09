@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import List from '../../containers/list/main.list';
 import Main from '../../containers/main/main';
 import Settings from '../../containers/settings/main.settings';
-import {getPuppyAction, addPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction, resetPasswordAction, deactivateAccountAction} from './main.main-container.action';
+import {getPuppyAction, addPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction, renderAdoptabullPuppiesAction, resetPasswordAction, deactivateAccountAction} from './main.main-container.action';
 
 export class MainContainer extends React.Component
 {
@@ -19,9 +19,12 @@ export class MainContainer extends React.Component
 	}
 
 	componentDidMount() {
-		if(localStorage.getItem("adopterId") !== "null"){
+		if(localStorage.getItem("adopterId") !== "null") {
 			getPuppyAction(this.props.dispatch);
 			renderFavoritePuppiesAction(this.props.dispatch);
+		}
+		else {
+			renderAdoptabullPuppiesAction(this.props.dispatch);
 		}
 	}
 
@@ -63,6 +66,7 @@ export class MainContainer extends React.Component
 				<List 
 					accountTypeProp={this.state.accountTypeComponentProp} 
 					favoritedPuppiesProp={this.props.favoritedPuppiesFromState} 
+					adoptabullPuppiesProp={this.props.adoptabullPuppiesFromState} 
 				/>
 				{!this.props.noMorePuppiesFromState && 
 					<Main 
@@ -95,6 +99,7 @@ const mapStateToProps = (state) => {
 		puppyNum: state._root.entries[1][1].puppyNumFromStore,
 		puppyFromState: state._root.entries[1][1].puppyFromStore,
 		favoritedPuppiesFromState: state._root.entries[1][1].favoritePuppiesFromStore.favoritePuppies,
+		adoptabullPuppiesFromState: state._root.entries[1][1].adoptabullPuppiesFromStore.adoptabullPuppies,
 		noMorePuppiesFromState: state._root.entries[1][1].noMorePuppiesFromStore
 	}
 }

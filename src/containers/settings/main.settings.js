@@ -19,6 +19,7 @@ export default function Settings(props)
 			*/}
 
 			{/* ADOPTERS */}
+			{/* 
 			<div className="discovery discovery-settings">
 				<p>discovery settings</p>
 				<p>location</p>
@@ -27,6 +28,7 @@ export default function Settings(props)
 				<p>age</p>
 				<p>size</p>
 			</div>
+			*/}
 
 			<div className="account-settings">
 				<p>account settings</p>

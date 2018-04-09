@@ -1,9 +1,10 @@
-import {GET_PUPPY, NO_MORE_PUPPIES, RENDER_FAVORITE_PUPPIES} from './main.main-container.action';
+import {GET_PUPPY, NO_MORE_PUPPIES, RENDER_FAVORITE_PUPPIES, RENDER_ADOPTABULL_PUPPIES} from './main.main-container.action';
 
 const initialState = {
 	puppyNumFromStore: 0,
 	puppyFromStore: [],
 	favoritePuppiesFromStore: [],
+	adoptabullPuppiesFromStore: [],
 	noMorePuppiesFromStore: false
 };
 
@@ -19,6 +20,12 @@ export default function mainContainerReducer(state=initialState, action) {
 			return 1;
 		})
 		return  {...state, favoritePuppiesFromStore: action.payload};
+	}
+	if (action.type === RENDER_ADOPTABULL_PUPPIES) {
+		action.payload.adoptabullPuppies = action.payload.adoptabullPuppies.sort(function(){
+			return 1;
+		})
+		return  {...state, adoptabullPuppiesFromStore: action.payload};
 	}
 	else {
 		return state;
