@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import List from '../../containers/list/main.list';
 import Main from '../../containers/main/main';
 import Settings from '../../containers/settings/main.settings';
-import {getPuppyAction, addPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction} from './main.main-container.action';
+import {getPuppyAction, addPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction, resetPasswordAction, deactivateAccountAction} from './main.main-container.action';
 
 export class MainContainer extends React.Component
 {
@@ -15,11 +15,11 @@ export class MainContainer extends React.Component
 		this.addPuppyFn = this.addPuppyFn.bind(this);
 		this.getNextPuppyFn = this.getNextPuppyFn.bind(this);
 		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
+		this.resetPasswordFn = this.resetPasswordFn.bind(this);
 	}
 
 	componentDidMount() {
 		if(localStorage.getItem("adopterId") !== "null"){
-			console.log(localStorage.getItem("adopterId").length);
 			getPuppyAction(this.props.dispatch);
 			renderFavoritePuppiesAction(this.props.dispatch);
 		}
@@ -33,7 +33,6 @@ export class MainContainer extends React.Component
 		for(var pair of addPuppyFormData.entries()) { 
 			puppyJSON[pair[0]] = pair[1];
 		}
-		// puppyJSON = (JSON.stringify(puppyJSON));
 		addPuppyAction(this.props.dispatch, puppyJSON);
 	}
 
@@ -45,6 +44,14 @@ export class MainContainer extends React.Component
 		let puppyIdProp = this.props.puppyFromState[0]._id; 
 		favoritePuppyAction(this.props.dispatch, puppyIdProp);
 		this.getNextPuppyFn();
+	}
+
+	resetPasswordFn() {
+		resetPasswordAction(this.props.dispatch, document.getElementById("oldPassword").value, document.getElementById("newPassword").value);
+	}
+
+	deactivateAccountFn() {
+		deactivateAccountAction();
 	}
 
 	render() {
@@ -72,7 +79,11 @@ export class MainContainer extends React.Component
 						Try adjusting your discovery settings.
 					</div>
 				}
-				<Settings accountTypeProp={this.state.accountTypeComponentProp} />
+				<Settings 
+					accountTypeProp={this.state.accountTypeComponentProp} 
+					resetPasswordProp={this.resetPasswordFn} 
+					deactivateAccountProp={this.deactivateAccountFn} 
+				/>
 			</div>
 		)
 	}

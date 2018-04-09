@@ -84,3 +84,35 @@ export const renderFavoritePuppiesAction = (dispatch) => {
 		});
 	})
 }
+
+export const RESET_PASSWORD = 'RESET_PASSWORD';
+export const resetPasswordAction = (dispatch, oldPassword, newPassword) => {
+	return fetch(window.API_URL + `/user/${localStorage.getItem('userId')}`, {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({oldPassword, newPassword})
+	}).then((obj) => {
+		console.log(obj);
+		alert("password updated");
+		return dispatch({
+			type: RESET_PASSWORD
+		})
+	})
+}
+
+export const DEACTIVATE_ACCOUNT = 'DEACTIVATE_ACCOUNT';
+export const deactivateAccountAction = () => {
+	return fetch(window.API_URL + `/user/${localStorage.getItem('userId')}`, {
+		method: 'DELETE',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}).then((obj) => {
+		delete localStorage.userId;
+		delete localStorage.adopterId;
+		delete localStorage.shelterId;
+		window.location.href = "/";
+	})
+}

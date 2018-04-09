@@ -2,6 +2,14 @@ import React from 'react';
 
 export default function Settings(props)
 {
+	const logOutFn = () => {
+		delete localStorage.userId;
+		delete localStorage.adopterId;
+		delete localStorage.shelterId;
+		window.location.href = "/";
+		return false;
+	}
+
 	return(
 		<aside className="settings">
 			<p className="section-header">settings</p>
@@ -18,6 +26,15 @@ export default function Settings(props)
 				<p>gender</p>
 				<p>age</p>
 				<p>size</p>
+			</div>
+
+			<div className="account-settings">
+				<p>account settings</p>
+				<p onClick={logOutFn}>log out</p>
+				<p onClick={(e) => {props.resetPasswordProp(e)}}>reset password</p>
+				<input id="oldPassword" />
+				<input id="newPassword" />
+				<p onClick={(e) => {props.deactivateAccountProp(e)}}>delete account</p>
 			</div>
 
 			{/* ADOPTERS EDIT */}
