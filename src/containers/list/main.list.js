@@ -19,6 +19,10 @@ export default function List(props)
 				{puppyCards}
 			</div>
 			{/*
+
+				TODO:
+				add edit/save for adopters and shelters
+
 				ADOPTERS EDIT
 				// click heart icon
 				// alert 'are you sure you want to remove [puppy name] from your favorites?'
@@ -51,6 +55,9 @@ export default function List(props)
 				</div>
 				<button type="submit" class="button">Remove Puppy</button>
 			*/}
+			
+			<button type="submit" className="button">Edit</button>
+			{/*<button type="submit" className="button">Save</button>*/}
 		</aside>
 	)
 }

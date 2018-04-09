@@ -2,13 +2,31 @@ import React, {Fragment} from 'react';
 
 export default function AddPuppy(props)
 {
+	const createDataURIFn = (e) => {
+		const file = (e.currentTarget.files[0]);
+		const fileReader = new FileReader();
+		if(file.size > 500000) {
+			alert("File size must be less than .5 MB");
+			return false
+		}
+		fileReader.addEventListener("load", () => {
+			document.getElementById("preview-puppy").src = fileReader.result;
+			document.getElementById("puppyURI").value = fileReader.result;
+		}, false);
+		if(file) {
+			fileReader.readAsDataURL(file);
+		}
+	}
+
 	return(
 		<Fragment>
 			<p className="section-header section-header-main">add puppy</p>
 			<form id="add-puppy">
 				<div className="form-input">
+					<img id="preview-puppy" src="/images/placeholder.png" alt="preview puppy"/>
 					<label htmlFor="image">Upload profile photo</label>
-					<input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" required />
+					<input type="file" onChange={createDataURIFn} id="image" name="image" accept=".jpg, .jpeg, .png" required />
+					<input type="hidden" id="puppyURI" name="photo" value="" />
 				</div>
 				<div className="form-input">
 					<label>name:</label>
@@ -142,7 +160,7 @@ export default function AddPuppy(props)
 				</div>
 				<div className="form-input">
 					<label>adoption fee:</label>
-					<input name="adoption-fee" type="text"/>
+					<input name="adoptionFee" type="text"/>
 				</div>
 				<button type="submit" className="button" onClick={(e) => {props.addPuppyNestedProp(e)}}>Add Puppy</button>
 			</form>

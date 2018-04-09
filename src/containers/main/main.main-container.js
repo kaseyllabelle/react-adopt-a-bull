@@ -12,9 +12,9 @@ export class MainContainer extends React.Component
 		super(props);
 		this.state = {};
 		this.state.accountTypeComponentProp = localStorage.getItem("adopterId") !== "null" ? "adopter" : "shelter";
-		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
-		this.getNextPuppyFn = this.getNextPuppyFn.bind(this);
 		this.addPuppyFn = this.addPuppyFn.bind(this);
+		this.getNextPuppyFn = this.getNextPuppyFn.bind(this);
+		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
 	}
 
 	componentDidMount() {
@@ -33,18 +33,18 @@ export class MainContainer extends React.Component
 		for(var pair of addPuppyFormData.entries()) { 
 			puppyJSON[pair[0]] = pair[1];
 		}
-		puppyJSON = (JSON.stringify(puppyJSON));
+		// puppyJSON = (JSON.stringify(puppyJSON));
 		addPuppyAction(this.props.dispatch, puppyJSON);
+	}
+
+	getNextPuppyFn() {
+		getPuppyAction(this.props.dispatch, this.props.puppyNum);
 	}
 
 	favoritePuppyFn() {
 		let puppyIdProp = this.props.puppyFromState[0]._id; 
 		favoritePuppyAction(this.props.dispatch, puppyIdProp);
 		this.getNextPuppyFn();
-	}
-
-	getNextPuppyFn() {
-		getPuppyAction(this.props.dispatch, this.props.puppyNum);
 	}
 
 	render() {
@@ -60,10 +60,10 @@ export class MainContainer extends React.Component
 				{!this.props.noMorePuppiesFromState && 
 					<Main 
 						accountTypeProp={this.state.accountTypeComponentProp} 
+						addPuppyProp={this.addPuppyFn} 
 						nextPuppyProp={this.getNextPuppyFn} 
 						emailShelterProp={shelterEmail} 
 						favoritePuppyProp={this.favoritePuppyFn}
-						addPuppyProp={this.addPuppyFn}
 					/>
 				}
 				{this.props.noMorePuppiesFromState && 
