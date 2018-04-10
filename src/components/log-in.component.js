@@ -23,6 +23,10 @@ export default function LogIn(props)
 
 	const signInConst = (
 		<div className="form-sign-in">
+			{/*
+				TODO:
+				change mailto to reset password
+			*/}
 			<a href="mailto:kll.design.dev@gmail.com" className="forgot-password">forgot password?</a>
 			<button type="submit" className="log-in-button" onClick={(e) => {props.signInProp(e)}}>Log In</button>
 		</div>

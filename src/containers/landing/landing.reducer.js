@@ -9,7 +9,6 @@ export default function landingReducer(state=initialState, action) {
 		return {...state, logInFromStore: action.payload === "btn-sign-up" ? false : true};
 	}
 	if (action.type === SIGN_IN) {
-		console.log(action.payload);
 		localStorage.setItem('userId', action.payload.user._id);
 		localStorage.setItem('adopterId', action.payload.user.adopterId);
 		localStorage.setItem('shelterId', action.payload.user.shelterId);

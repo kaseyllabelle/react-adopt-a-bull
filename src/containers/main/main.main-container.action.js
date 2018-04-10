@@ -7,7 +7,6 @@ export const getPuppyAction = (dispatch, puppyNum = 0) => {
 			'Content-Type': 'application/json'
 		}
 	}).then((obj) => {
-		// console.log(obj);
 		if(obj.status === 416) {
 			return dispatch({
 				type: NO_MORE_PUPPIES
@@ -40,7 +39,6 @@ export const addPuppyAction = (dispatch, puppyJSON) => {
 		},
 		body: JSON.stringify(data)
 	}).then((obj) => {
-		// console.log(obj);
 		return obj.json().then((o) => {
 			renderAdoptabullPuppiesAction(dispatch)
 		});
@@ -60,7 +58,6 @@ export const favoritePuppyAction = (dispatch, puppyId) => {
 		},
 		body: JSON.stringify(data)
 	}).then((obj) => {
-		// console.log(obj);
 		return obj.json().then((o) => {
 			renderFavoritePuppiesAction(dispatch)
 		});
@@ -75,7 +72,6 @@ export const renderFavoritePuppiesAction = (dispatch) => {
 			'Content-Type': 'application/json'
 		}
 	}).then((obj) => {
-		// console.log(obj);
 		return obj.json().then((o) => {
 			return dispatch({
 				type: RENDER_FAVORITE_PUPPIES,
@@ -94,7 +90,6 @@ export const renderAdoptabullPuppiesAction = (dispatch) => {
 		}
 	}).then((obj) => {
 		return obj.json().then((o) => {
-		console.log(o);
 			return dispatch({
 				type: RENDER_ADOPTABULL_PUPPIES,
 				payload: o
@@ -112,7 +107,6 @@ export const resetPasswordAction = (dispatch, oldPassword, newPassword) => {
 		},
 		body: JSON.stringify({oldPassword, newPassword})
 	}).then((obj) => {
-		console.log(obj);
 		alert("password updated");
 		return dispatch({
 			type: RESET_PASSWORD

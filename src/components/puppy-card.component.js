@@ -15,7 +15,6 @@ export class PuppyCard extends Component
 	}
 
 	render() {
-
 		this.toggleInfoFn = (e) => {
 			this.setState({
 				infoExpanded: !this.state.infoExpanded
@@ -48,7 +47,6 @@ export class PuppyCard extends Component
 }
 
 const mapStateToProps = (state) => {
-	// console.log(state);
 	return {
 		puppyFromState: state._root.entries[1][1].puppyFromStore
 	}

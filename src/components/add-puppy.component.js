@@ -34,8 +34,6 @@ export default function AddPuppy(props)
 		document.getElementById("compatibility").value = compatibilityArrayString.replace(",", "");
 	}
 
-	// TODO: remove onchange from other inputs
-
 	return(
 		<Fragment>
 			<p className="section-header section-header-main">add puppy</p>
@@ -54,11 +52,11 @@ export default function AddPuppy(props)
 					<label>gender:</label>
 					<div className="radio-button-bar">
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-gender" name="gender" value="female" required/>
+							<input type="radio" className="radio-button" id="characteristic-gender" name="gender" value="female" required/>
 							<label htmlFor="characteristic-gender" className="radio-button-label radio-button-label-left">female</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-gender" name="gender" value="male" required/>
+							<input type="radio" className="radio-button" id="characteristic-gender" name="gender" value="male" required/>
 							<label htmlFor="characteristic-gender" className="radio-button-label radio-button-label-right">male</label>
 						</div>
 					</div>
@@ -67,15 +65,15 @@ export default function AddPuppy(props)
 					<label>age:</label>
 					<div className="radio-button-bar">
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-age" name="age" value="puppy" required/>
+							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="puppy" required/>
 							<label htmlFor="characteristic-age" className="radio-button-label radio-button-label-left">puppy</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-age" name="age" value="adult" required/>
+							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="adult" required/>
 							<label htmlFor="characteristic-age" className="radio-button-label">adult</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-age" name="age" value="senior" required/>
+							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="senior" required/>
 							<label htmlFor="characteristic-age" className="radio-button-label radio-button-label-right">senior</label>
 						</div>
 					</div>
@@ -84,19 +82,19 @@ export default function AddPuppy(props)
 					<label>size:</label>
 					<div className="radio-button-bar">
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-size" name="size" value="S" required/>
+							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="S" required/>
 							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-left">S</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-size" name="size" value="M" required/>
+							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="M" required/>
 							<label htmlFor="characteristic-size" className="radio-button-label">M</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-size" name="size" value="L" required/>
+							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="L" required/>
 							<label htmlFor="characteristic-size" className="radio-button-label">L</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-size" name="size" value="XL" required/>
+							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="XL" required/>
 							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-right">XL</label>
 						</div>
 					</div>
@@ -105,15 +103,15 @@ export default function AddPuppy(props)
 					<label>training:</label>
 					<div className="radio-button-bar">
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-training" name="training" value="needs training"/>
+							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="needs training"/>
 							<label htmlFor="characteristic-training" className="radio-button-label radio-button-label-left">needs training</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-training" name="training" value="has basic training"/>
+							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="has basic training"/>
 							<label htmlFor="characteristic-training" className="radio-button-label">has basic training</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input onChange={stringifyArray} type="radio" className="radio-button" id="characteristic-training" name="training" value="well trained"/>
+							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="well trained"/>
 							<label htmlFor="characteristic-training" className="radio-button-label radio-button-label-right">well trained</label>
 						</div>
 					</div>

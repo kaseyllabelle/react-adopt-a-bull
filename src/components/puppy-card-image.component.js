@@ -2,8 +2,6 @@ import React, {Fragment} from 'react';
 
 export default function PuppyCardImage(props)
 {
-	// console.log(puppyImageProp);
-
 	let puppyImageProp;
 
 	if (Array.isArray(props.puppyProp)) {

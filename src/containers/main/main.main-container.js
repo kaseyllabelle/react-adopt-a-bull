@@ -58,7 +58,6 @@ export class MainContainer extends React.Component
 	}
 
 	render() {
-
 		const shelterEmail = (this.props.puppyFromState["0"] && this.props.puppyFromState["0"].shelterId.email) || "";
 
 		return(
@@ -94,7 +93,6 @@ export class MainContainer extends React.Component
 }
 
 const mapStateToProps = (state) => {
-	// console.log(state);
 	return {
 		puppyNum: state._root.entries[1][1].puppyNumFromStore,
 		puppyFromState: state._root.entries[1][1].puppyFromStore,

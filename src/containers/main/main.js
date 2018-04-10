@@ -21,7 +21,7 @@ export default function Main(props)
 					</div>
 					<div className="bottom-nav">
 						{/*
-							TODO: use icon button component for these icon buttons
+							TODO: create icon button component for these icon buttons
 						*/}
 						<a className="icon-wrapper next" onClick={() => {props.nextPuppyProp()}}>
 							<i className="material-icons icon-next">close</i>

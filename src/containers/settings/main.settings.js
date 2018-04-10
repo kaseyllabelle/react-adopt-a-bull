@@ -12,7 +12,24 @@ export default function Settings(props)
 
 	return(
 		<aside className="settings">
-			<p className="section-header">settings</p>
+			<p className="section-header">account settings</p>
+			<div className="account-settings">
+				<p>Reset password</p>
+				<div className="form-input">
+					<label htmlFor="oldPassword">Old password:</label>
+					<input id="oldPassword" />
+				</div>
+				<div className="form-input">
+					<label htmlFor="newPassword">New password:</label>
+					<input id="newPassword" />
+				</div>
+				<a onClick={(e) => {props.resetPasswordProp(e)}}>Submit</a>
+				<hr/>
+				<p><a onClick={logOutFn}>Log out</a></p>
+				<hr/>
+				<p><a onClick={(e) => {props.deactivateAccountProp(e)}}>Delete account</a></p>
+			</div>
+			
 			{/* 
 				TODO: 
 				integrate location services 
@@ -29,15 +46,6 @@ export default function Settings(props)
 				<p>size</p>
 			</div>
 			*/}
-
-			<div className="account-settings">
-				<p>account settings</p>
-				<p onClick={logOutFn}>log out</p>
-				<p onClick={(e) => {props.resetPasswordProp(e)}}>reset password</p>
-				<input id="oldPassword" />
-				<input id="newPassword" />
-				<p onClick={(e) => {props.deactivateAccountProp(e)}}>delete account</p>
-			</div>
 
 			{/* ADOPTERS EDIT */}
 			{/*
@@ -105,16 +113,9 @@ export default function Settings(props)
 				<label>Email Address</label>
 				<input name="shelter-email" type="text"/>
 			</div>
-
-			<div className="account-settings">
-				<p>account settings</p>
-				<p>log out</p>
-				<p>reset password</p>
-				<p>delete account</p>
-			</div>
 			*/}
 			
-			<button type="submit" className="button">Edit</button>
+			{/*<button type="submit" className="button">Edit</button>*/}
 			{/*<button type="submit" className="button">Save</button>*/}
 		</aside>
 	)

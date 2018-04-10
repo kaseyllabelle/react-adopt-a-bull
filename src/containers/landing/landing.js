@@ -8,15 +8,11 @@ import {toggleLogInAction, signUpAction, signInAction} from './landing.action';
 export class Landing extends React.Component
 {
 	render() {
-
-		// console.log(this.props);
-
 		if (this.props.userIdFromState) {
 			return <Redirect to={`/main/${this.props.userIdFromState}`} />
 		}
 
 		this.toggleLogInFn = (e) => {
-			console.log(e.target);
 			toggleLogInAction(this.props.dispatch, e.target.id);
 		}
 
@@ -25,13 +21,11 @@ export class Landing extends React.Component
 			const email = document.getElementById("email").value;
 			const password = document.getElementById("password").value;
 			const userType = document.querySelector(`input[name="user-type"]:checked`).value;
-			// console.log(userType);
 			signUpAction(this.props.dispatch, email, password, userType);
 		}
 
 		this.signInFn = (e) => {
 			e.preventDefault();
-			// console.log(e);
 			const email = document.getElementById("email").value;
 			const password = document.getElementById("password").value;
 			signInAction(this.props.dispatch, email, password);
@@ -71,7 +65,6 @@ export class Landing extends React.Component
 }
 
 const mapStateToProps = (state) => {
-	// console.log(state);
 	return {
 		logInFromState: state._root.entries["0"][1].logInFromStore,
 		userIdFromState: state._root.entries["0"][1].userIdFromStore
