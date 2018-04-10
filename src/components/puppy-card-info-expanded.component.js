@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function PuppyCardInfoExpanded(props)
 {
-	// console.log(props);
+	console.log(props);
 
 	const puppyNameProp = props.puppyProp["0"] && props.puppyProp["0"].name;
 	const puppyGenderProp = props.puppyProp["0"] && props.puppyProp["0"].gender;
@@ -54,13 +54,13 @@ export default function PuppyCardInfoExpanded(props)
 					<span className="puppy-card-expanded-content">{puppyTrainingProp}</span>
 				</p>
 			}
-			{puppyCharacteristicsProp.length > 0 &&
+			{puppyCharacteristicsProp &&
 				<p className="characteristics">
 					<span className="puppy-card-expanded-label">Characteristics: </span> 
 					<span className="puppy-card-expanded-content">{puppyCharacteristicsProp}</span>
 				</p>
 			}
-			{puppyCompatibilityProp.length > 0 &&
+			{puppyCompatibilityProp &&
 				<p className="compatibility">
 					<span className="puppy-card-expanded-label">Compatibility: </span> 
 					<span className="puppy-card-expanded-content">{puppyCompatibilityProp}</span>
