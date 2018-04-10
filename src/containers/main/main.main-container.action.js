@@ -92,7 +92,9 @@ export const renderAdoptabullPuppiesAction = (dispatch) => {
 		return obj.json().then((o) => {
 			return dispatch({
 				type: RENDER_ADOPTABULL_PUPPIES,
-				payload: o
+				payload: o || {
+					adoptabullPuppies: []
+				}
 			})
 		});
 	})
