@@ -120,7 +120,6 @@ export class MainContainer extends React.Component
 }
 
 const mapStateToProps = (state) => {
-	console.log(state);
 	return {
 		puppyNum: state._root.entries[1][1].puppyNumFromStore,
 		puppyFromState: state._root.entries[1][1].puppyFromStore,

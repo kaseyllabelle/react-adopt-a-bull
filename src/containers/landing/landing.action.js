@@ -20,7 +20,6 @@ export const signUpAction = (dispatch, email, password, userType) => {
 		},
 		body: data
 	}).then((obj) => {
-		console.log(obj);
 		window.location.href = '/'
 	});
 };
@@ -38,7 +37,6 @@ export const signInAction = (dispatch, email, password) => {
 		},
 		body: data
 	}).then((obj) => {
-		console.log(obj);
 		return obj.json().then((o) => {
 			return dispatch({
 				type: SIGN_IN,

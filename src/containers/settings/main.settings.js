@@ -129,38 +129,6 @@ export default function Settings(props)
 				<p className="email">adoption@mspca.org</p>
 			</div>
 			*/}
-
-			{/* SHELTERS EDIT */}
-			{/*
-			<div className="form-input">
-				<label>Shelter Name</label>
-				<input name="shelter-name" type="text"/>
-			</div>
-			<div className="form-input">
-				<label>Address</label>
-				<input name="shelter-address" type="text"/>
-			</div>
-			<div className="form-input">
-				<label>City</label>
-				<input name="shelter-city" type="text"/>
-			</div>
-			<div className="form-input">
-				<label>State</label>
-				<input name="shelter-state" type="text"/>
-			</div>
-			<div className="form-input">
-				<label>Zip</label>
-				<input name="shelter-zip" type="text"/>
-			</div>
-			<div className="form-input">
-				<label>Phone Number</label>
-				<input name="shelter-phone" type="text"/>
-			</div>
-			<div className="form-input">
-				<label>Email Address</label>
-				<input name="shelter-email" type="text"/>
-			</div>
-			*/}
 			
 			{/*<button type="submit" className="button">Edit</button>*/}
 			{/*<button type="submit" className="button">Save</button>*/}
