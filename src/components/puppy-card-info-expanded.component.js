@@ -80,27 +80,27 @@ export default function PuppyCardInfoExpanded(props)
 			}
 			<div className="shelter-info">
 				<p className="puppy-card-expanded-label">Shelter Information:</p>
-				{puppyShelterNameProp.length > 0 &&
+				{puppyShelterNameProp &&
 					<p className="name"> 
 						<span className="puppy-card-expanded-content">{puppyShelterNameProp}</span>
 					</p>
 				}
-				{puppyShelterAddressNumberProp.length > 0 && puppyShelterAddressStreetProp.length > 0 &&
+				{puppyShelterAddressNumberProp && puppyShelterAddressStreetProp &&
 					<p className="address">
 						<span className="puppy-card-expanded-content">{puppyShelterAddressNumberProp} {puppyShelterAddressStreetProp}</span>
 					</p>
 				}
-				{puppyShelterAddressCityProp.length > 0 && puppyShelterAddressStateProp.length > 0 && puppyShelterAddressZipcodeProp.length > 0 &&
+				{puppyShelterAddressCityProp && puppyShelterAddressStateProp && puppyShelterAddressZipcodeProp &&
 					<p className="address">
 						<span className="puppy-card-expanded-content">{puppyShelterAddressCityProp}, {puppyShelterAddressStateProp} {puppyShelterAddressZipcodeProp}</span>
 					</p>
 				}
-				{puppyShelterTelephoneProp.length > 0 &&
+				{puppyShelterTelephoneProp &&
 					<p className="telephone">
 						<span className="puppy-card-expanded-content">{puppyShelterTelephoneProp}</span>
 					</p>
 				}
-				{puppyShelterEmailProp.length > 0 &&
+				{puppyShelterEmailProp &&
 					<p className="email">
 						<span className="puppy-card-expanded-content">{puppyShelterEmailProp}</span>
 					</p>
