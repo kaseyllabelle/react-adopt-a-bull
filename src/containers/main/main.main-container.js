@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import List from '../../containers/list/main.list';
 import Main from '../../containers/main/main';
 import Settings from '../../containers/settings/main.settings';
-import {getPuppyAction, addPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction, renderAdoptabullPuppiesAction, resetPasswordAction, deactivateAccountAction} from './main.main-container.action';
+import {getPuppyAction, addPuppyAction, favoritePuppyAction, renderFavoritePuppiesAction, renderAdoptabullPuppiesAction, shelterProfileAction, getShelterAction, resetPasswordAction, deactivateAccountAction} from './main.main-container.action';
 
 export class MainContainer extends React.Component
 {
@@ -12,9 +12,12 @@ export class MainContainer extends React.Component
 		super(props);
 		this.state = {};
 		this.state.accountTypeComponentProp = localStorage.getItem("adopterId") !== "null" ? "adopter" : "shelter";
+		this.state.editShelterProfileOverride = false;
+		this.editShelterProfileFn = this.editShelterProfileFn.bind(this);
 		this.addPuppyFn = this.addPuppyFn.bind(this);
 		this.getNextPuppyFn = this.getNextPuppyFn.bind(this);
 		this.favoritePuppyFn = this.favoritePuppyFn.bind(this);
+		this.shelterProfileFn = this.shelterProfileFn.bind(this);
 		this.resetPasswordFn = this.resetPasswordFn.bind(this);
 	}
 
@@ -25,6 +28,7 @@ export class MainContainer extends React.Component
 		}
 		else {
 			renderAdoptabullPuppiesAction(this.props.dispatch);
+			getShelterAction(this.props.dispatch);
 		}
 	}
 
@@ -47,6 +51,25 @@ export class MainContainer extends React.Component
 		let puppyIdProp = this.props.puppyFromState[0]._id; 
 		favoritePuppyAction(this.props.dispatch, puppyIdProp);
 		this.getNextPuppyFn();
+	}
+
+	shelterProfileFn(e) {
+		e.preventDefault();
+		const shelterProfileFormData = new FormData(e.currentTarget);
+		let shelterProfileJSON = {};
+		for(var pair of shelterProfileFormData.entries()) { 
+			shelterProfileJSON[pair[0]] = pair[1];
+		}
+		shelterProfileAction(this.props.dispatch, shelterProfileJSON);
+		this.setState({
+			editShelterProfileOverride: false
+		})
+	}
+
+	editShelterProfileFn() {
+		this.setState({
+			editShelterProfileOverride: true
+		});
 	}
 
 	resetPasswordFn() {
@@ -84,6 +107,10 @@ export class MainContainer extends React.Component
 				}
 				<Settings 
 					accountTypeProp={this.state.accountTypeComponentProp} 
+					shelterProfileProp={this.shelterProfileFn}
+					shelterProfileSettingsProp={this.props.shelterProfileFromState}
+					editShelterOverrideBoolean={this.state.editShelterProfileOverride}
+					editShelterProfileOverrideProp={this.editShelterProfileFn}
 					resetPasswordProp={this.resetPasswordFn} 
 					deactivateAccountProp={this.deactivateAccountFn} 
 				/>
@@ -93,12 +120,14 @@ export class MainContainer extends React.Component
 }
 
 const mapStateToProps = (state) => {
+	console.log(state);
 	return {
 		puppyNum: state._root.entries[1][1].puppyNumFromStore,
 		puppyFromState: state._root.entries[1][1].puppyFromStore,
 		favoritedPuppiesFromState: state._root.entries[1][1].favoritePuppiesFromStore.favoritePuppies,
 		adoptabullPuppiesFromState: state._root.entries[1][1].adoptabullPuppiesFromStore.adoptabullPuppies,
-		noMorePuppiesFromState: state._root.entries[1][1].noMorePuppiesFromStore
+		noMorePuppiesFromState: state._root.entries[1][1].noMorePuppiesFromStore,
+		shelterProfileFromState: state._root.entries[1][1].shelterProfileFromStore
 	}
 }
 

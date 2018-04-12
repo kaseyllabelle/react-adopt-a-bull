@@ -1,0 +1,56 @@
+.main-container {
+  display: flex;
+  height: 100%;
+  margin-top: -75px;
+  padding-top: 75px; }
+
+.list,
+.main,
+.settings {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  overflow: auto; }
+
+.main {
+  flex-basis: 50%;
+  align-items: center; }
+
+.list,
+.settings {
+  flex-basis: 25%;
+  background-color: #F5F5F5; }
+
+.list {
+  padding: 30px 30px 0; }
+
+.section-header-main {
+  padding: 30px 30px 0 30px; }
+
+.settings {
+  padding: 30px;
+  text-align: center; }
+
+@media all and (max-width: 767px) {
+  .main-container {
+    height: auto;
+    flex-direction: column; }
+
+  .main,
+  .list,
+  .settings {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto; }
+
+  .main {
+    order: 1; }
+
+  .list {
+    order: 2; }
+
+  .settings {
+    order: 3;
+    background-color: #FFFFFF; } }
+
+/*# sourceMappingURL=main.css.map */

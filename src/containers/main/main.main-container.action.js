@@ -100,6 +100,44 @@ export const renderAdoptabullPuppiesAction = (dispatch) => {
 	})
 }
 
+export const SHELTER_PROFILE = 'SHELTER_PROFILE';
+export const shelterProfileAction = (dispatch, shelterProfileJSON) => {
+	const data = {
+		shelterId: localStorage.getItem('shelterId'),
+		shelterProfileJSON
+	}
+	return fetch(window.API_URL + `/api/shelters/${localStorage.getItem('shelterId')}`, {
+		method: 'PUT',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(data)
+	}).then((obj) => {
+		return obj.json().then((o) => {
+			return dispatch({
+				type: SHELTER_PROFILE,
+				payload: o
+			})
+		});
+	})
+}
+
+export const getShelterAction = (dispatch) => {
+	return fetch(window.API_URL + `/api/shelters/${localStorage.getItem('shelterId')}`, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}).then((obj) => {
+		return obj.json().then((o) => {
+			return dispatch({
+				type: SHELTER_PROFILE,
+				payload: o
+			})
+		});
+	})
+}
+
 export const RESET_PASSWORD = 'RESET_PASSWORD';
 export const resetPasswordAction = (dispatch, oldPassword, newPassword) => {
 	return fetch(window.API_URL + `/user/${localStorage.getItem('userId')}`, {

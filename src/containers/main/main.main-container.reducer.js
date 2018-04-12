@@ -1,11 +1,14 @@
-import {GET_PUPPY, NO_MORE_PUPPIES, RENDER_FAVORITE_PUPPIES, RENDER_ADOPTABULL_PUPPIES} from './main.main-container.action';
+import {GET_PUPPY, NO_MORE_PUPPIES, RENDER_FAVORITE_PUPPIES, RENDER_ADOPTABULL_PUPPIES, SHELTER_PROFILE} from './main.main-container.action';
 
 const initialState = {
 	puppyNumFromStore: 0,
 	puppyFromStore: [],
 	favoritePuppiesFromStore: [],
 	adoptabullPuppiesFromStore: [],
-	noMorePuppiesFromStore: false
+	noMorePuppiesFromStore: false,
+	shelterProfileFromStore: {
+		unset: true
+	}
 };
 
 export default function mainContainerReducer(state=initialState, action) {
@@ -26,6 +29,10 @@ export default function mainContainerReducer(state=initialState, action) {
 			return 1;
 		})
 		return  {...state, adoptabullPuppiesFromStore: action.payload};
+	}
+	if (action.type === SHELTER_PROFILE) {
+		console.log(action.payload);
+		return  {...state, shelterProfileFromStore: action.payload};
 	}
 	else {
 		return state;
