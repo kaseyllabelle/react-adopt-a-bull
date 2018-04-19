@@ -1,0 +1,68 @@
+.form-add-puppy
+{
+	fieldset
+	{
+		width: auto;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"]
+	{
+		width: auto;
+	}
+
+	input[type="file"]
+	{
+		display: block;
+		width: auto;
+	}
+
+	.radio-button-wrapper
+	{
+		width: auto;
+	}
+
+	.radio-button-wrapper-alt
+	{
+		width: auto;
+	}
+
+	.preview-puppy
+	{
+		max-width: 200px;
+	}
+
+	.upload-btn-wrapper
+	{
+		position: relative;
+		overflow: hidden;
+		display: inline-block;
+	}
+
+	.btn
+	{
+		display: block;
+		border: none;
+		color: $blue500;
+	}
+
+	.upload-btn-wrapper input[type=file]
+	{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		font-size: 100px;
+		opacity: 0;
+	}
+}
+
+
+
+/*<img className="preview-puppy" />
+<i className="material-icons">add_a_photo</i>
+<label htmlFor="image">Upload profile photo</label>
+<input type="file" onChange={createDataURIFn} id="image" name="image" accept=".jpg, .jpeg, .png" required />
+<input type="hidden" id="puppyURI" name="photo" value="" />*/

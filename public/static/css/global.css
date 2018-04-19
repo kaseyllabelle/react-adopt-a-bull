@@ -224,6 +224,43 @@ a.forgot-password {
   .settings {
     order: 3;
     background-color: #FFFFFF; } }
+.form-add-puppy fieldset {
+  width: auto; }
+.form-add-puppy input[type="text"],
+.form-add-puppy input[type="email"],
+.form-add-puppy input[type="password"] {
+  width: auto; }
+.form-add-puppy input[type="file"] {
+  display: block;
+  width: auto; }
+.form-add-puppy .radio-button-wrapper {
+  width: auto; }
+.form-add-puppy .radio-button-wrapper-alt {
+  width: auto; }
+.form-add-puppy .preview-puppy {
+  max-width: 200px; }
+.form-add-puppy .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block; }
+.form-add-puppy .btn {
+  display: block;
+  border: none;
+  color: #2196F3; }
+.form-add-puppy .upload-btn-wrapper input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+  opacity: 0; }
+
+/*<img className="preview-puppy" />
+<i className="material-icons">add_a_photo</i>
+<label htmlFor="image">Upload profile photo</label>
+<input type="file" onChange={createDataURIFn} id="image" name="image" accept=".jpg, .jpeg, .png" required />
+<input type="hidden" id="puppyURI" name="photo" value="" />*/
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
@@ -350,7 +387,8 @@ input[disabled] {
 input[disabled] + label {
   color: #BDBDBD; }
 
-label.radio-button-label {
+label.radio-button-label,
+input[type="file"] {
   display: block;
   border: 2px solid #2196F3;
   border-radius: 3px;

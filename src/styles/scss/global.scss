@@ -170,8 +170,6 @@ input.radio-button
 	cursor: pointer;
 }
 
-
-
 input[disabled]
 {
 	cursor: not-allowed;
@@ -182,7 +180,8 @@ input[disabled]+label
 	color: $grey400;
 }
 
-label.radio-button-label
+label.radio-button-label,
+input[type="file"]
 {
 	display: block;
 	border: 2px solid $blue500;
