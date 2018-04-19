@@ -38,9 +38,9 @@ export default function AddPuppy(props)
 		<Fragment>
 			<p className="section-header section-header-main">add puppy</p>
 			<form id="add-puppy" className="form-add-puppy">
-				<div className="upload-btn-wrapper">
+				<div className="form-input button-upload-photo-wrapper">
+					<button className="button-upload-photo">upload photo:</button>
 					<img id="preview-puppy" className="preview-puppy" src="/images/placeholder.png" alt="preview puppy"/>
-					<button class="btn"><i className="material-icons">add_a_photo</i> upload photo</button>
 					<input type="file" onChange={createDataURIFn} id="image" name="image" accept=".jpg, .jpeg, .png" required />
 					<input type="hidden" id="puppyURI" name="photo" value="" />
 				</div>
@@ -56,69 +56,69 @@ export default function AddPuppy(props)
 				</div>
 				<div className="form-input">
 					<label>gender:</label>
-					<div className="">
-						<div className="">
-							<input type="radio" className="" id="characteristic-gender" name="gender" value="female" required/>
-							<label htmlFor="characteristic-gender" className="">female</label>
+					<div className="radio-button-bar">
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-gender" name="gender" value="female" required/>
+							<label htmlFor="characteristic-gender" className="radio-button-label radio-button-label-left">female</label>
 						</div>
-						<div className="">
-							<input type="radio" className="" id="characteristic-gender" name="gender" value="male" required/>
-							<label htmlFor="characteristic-gender" className="">male</label>
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-gender" name="gender" value="male" required/>
+							<label htmlFor="characteristic-gender" className="radio-button-label radio-button-label-right">male</label>
 						</div>
 					</div>
 				</div>
 				<div className="form-input">
 					<label>age:</label>
-					<div className="">
-						<div className="">
-							<input type="radio" className="" id="characteristic-age" name="age" value="puppy" required/>
-							<label htmlFor="characteristic-age" className="">puppy</label>
+					<div className="radio-button-bar">
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="puppy" required/>
+							<label htmlFor="characteristic-age" className="radio-button-label radio-button-label-left">puppy</label>
 						</div>
-						<div className="">
-							<input type="radio" className="" id="characteristic-age" name="age" value="adult" required/>
-							<label htmlFor="characteristic-age" className="">adult</label>
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="adult" required/>
+							<label htmlFor="characteristic-age" className="radio-button-label radio-button-label-center">adult</label>
 						</div>
-						<div className="">
-							<input type="radio" className="" id="characteristic-age" name="age" value="senior" required/>
-							<label htmlFor="characteristic-age" className="">senior</label>
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="senior" required/>
+							<label htmlFor="characteristic-age" className="radio-button-label radio-button-label-right">senior</label>
 						</div>
 					</div>
 				</div>
 				<div className="form-input">
 					<label>size:</label>
-					<div className="">
-						<div className="">
-							<input type="radio" className="" id="characteristic-size" name="size" value="S" required/>
-							<label htmlFor="characteristic-size" className="">S</label>
+					<div className="radio-button-bar">
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="S" required/>
+							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-left">S</label>
 						</div>
-						<div className="">
-							<input type="radio" className="" id="characteristic-size" name="size" value="M" required/>
-							<label htmlFor="characteristic-size" className="">M</label>
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="M" required/>
+							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-center">M</label>
 						</div>
-						<div className="">
-							<input type="radio" className="" id="characteristic-size" name="size" value="L" required/>
-							<label htmlFor="characteristic-size" className="">L</label>
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="L" required/>
+							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-center">L</label>
 						</div>
-						<div className="">
-							<input type="radio" className="" id="characteristic-size" name="size" value="XL" required/>
-							<label htmlFor="characteristic-size" className="">XL</label>
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="XL" required/>
+							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-right">XL</label>
 						</div>
 					</div>
 				</div>
 				<div className="form-input">
 					<label>training:</label>
-					<div className="">
-						<div className="">
-							<input type="radio" className="" id="characteristic-training" name="training" value="needs training"/>
-							<label htmlFor="characteristic-training" className="">needs training</label>
+					<div className="radio-button-bar">
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="needs training"/>
+							<label htmlFor="characteristic-training" className="radio-button-label radio-button-label-left">needs training</label>
 						</div>
-						<div className="">
-							<input type="radio" className="" id="characteristic-training" name="training" value="has basic training"/>
-							<label htmlFor="characteristic-training" className="">has basic training</label>
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="has basic training"/>
+							<label htmlFor="characteristic-training" className="radio-button-label radio-button-label-center">has basic training</label>
 						</div>
-						<div className="">
-							<input type="radio" className="" id="characteristic-training" name="training" value="well trained"/>
-							<label htmlFor="characteristic-training" className="">well trained</label>
+						<div className="radio-button-wrapper">
+							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="well trained"/>
+							<label htmlFor="characteristic-training" className="radio-button-label radio-button-label-right">well trained</label>
 						</div>
 					</div>
 				</div>
