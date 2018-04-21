@@ -294,31 +294,17 @@ a.forgot-password {
     background-color: #FFFFFF; } }
 .form-add-puppy {
   width: 100%;
-  padding: 0 30px 30px;
-  /*text-align: center;*/ }
+  padding: 0 30px 30px; }
   .form-add-puppy input[type="hidden"],
-  .form-add-puppy input[type="text"],
-  .form-add-puppy input[type="radio"],
-  .form-add-puppy input[type="checkbox"] {
+  .form-add-puppy input[type="text"] {
     display: block;
-    width: auto;
-    margin-top: 2px;
+    width: 100%;
+    /*margin-top: 2px;*/
     border: 2px solid #2196F3;
     padding: 10px; }
-  .form-add-puppy input[type="file"]:active,
-  .form-add-puppy input[type="file"]:focus,
-  .form-add-puppy input[type="hidden"]:active,
-  .form-add-puppy input[type="hidden"]:focus,
-  .form-add-puppy input[type="text"]:active,
-  .form-add-puppy input[type="text"]:focus,
-  .form-add-puppy input[type="radio"]:active,
-  .form-add-puppy input[type="radio"]:focus,
-  .form-add-puppy input[type="checkbox"]:active,
-  .form-add-puppy input[type="checkbox"]:focus {
-    box-shadow: 0 0 2px 0 #2196F3; }
   .form-add-puppy .preview-puppy {
     max-width: 200px;
-    margin-top: 2px; }
+    /*margin-top: 2px;*/ }
   .form-add-puppy .button-upload-photo-wrapper {
     position: relative;
     display: inline-block;
@@ -337,14 +323,18 @@ a.forgot-password {
     height: 100%;
     font-size: 100px;
     opacity: 0; }
+  .form-add-puppy .form-input-label {
+    display: block;
+    margin-bottom: 10px; }
   .form-add-puppy .radio-button-bar {
     display: flex;
-    justify-content: center;
-    align-items: stretch; }
+    /*justify-content: center;*/
+    /*align-items: stretch;*/ }
   .form-add-puppy .radio-button-wrapper {
     position: relative;
-    align-items: stretch;
-    width: 50%;
+    /*align-items: stretch;
+    align-self: stretch;
+    width: 50%;*/
     margin-top: 2px; }
   .form-add-puppy .radio-button-wrapper-alt {
     width: auto; }
@@ -384,6 +374,15 @@ a.forgot-password {
   .form-add-puppy input.radio-button:checked + label.radio-button-label {
     background-color: #2196F3;
     color: white; }
+  .form-add-puppy .checkbox-wrapper {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px; }
+  .form-add-puppy input[type="checkbox"] {
+    background-color: #EEEEEE;
+    margin: 0 10px 0 0;
+    padding: 10px;
+    border: 2px solid #2196F3; }
 
 * {
   box-sizing: border-box;

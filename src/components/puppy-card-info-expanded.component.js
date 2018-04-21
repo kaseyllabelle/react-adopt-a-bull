@@ -8,7 +8,7 @@ export default function PuppyCardInfoExpanded(props)
 	const puppyGenderProp = props.puppyProp["0"] && props.puppyProp["0"].gender;
 	const puppyAgeProp = props.puppyProp["0"] && props.puppyProp["0"].age;
 	const puppySizeProp = props.puppyProp["0"] && props.puppyProp["0"].size;
-	const puppyTrainingProp = props.puppyProp["0"] && props.puppyProp["0"].training;
+	// const puppyTrainingProp = props.puppyProp["0"] && props.puppyProp["0"].training;
 	const puppyCharacteristicsProp = props.puppyProp["0"] && props.puppyProp["0"].characteristics;
 	const puppyCompatibilityProp = props.puppyProp["0"] && props.puppyProp["0"].compatibility;
 	const puppyBiographyProp = props.puppyProp["0"] && props.puppyProp["0"].biography;
@@ -48,12 +48,14 @@ export default function PuppyCardInfoExpanded(props)
 					<span className="puppy-card-expanded-content">{puppySizeProp}</span>
 				</p>
 			}
+			{/*
 			{puppyTrainingProp.length > 0 &&
 				<p className="Training">
 					<span className="puppy-card-expanded-label">Training: </span> 
 					<span className="puppy-card-expanded-content">{puppyTrainingProp}</span>
 				</p>
 			}
+			*/}
 			{puppyCharacteristicsProp &&
 				<p className="characteristics">
 					<span className="puppy-card-expanded-label">Characteristics: </span> 

@@ -37,154 +37,148 @@ export default function AddPuppy(props)
 	return(
 		<Fragment>
 			<p className="section-header section-header-main">add puppy</p>
-			<form id="add-puppy" className="form-add-puppy">
+			<form className="form-add-puppy" id="add-puppy">
 				<div className="form-input button-upload-photo-wrapper">
-					<button className="button-upload-photo">upload photo:</button>
-					<img id="preview-puppy" className="preview-puppy" src="/images/placeholder.png" alt="preview puppy"/>
-					<input type="file" onChange={createDataURIFn} id="image" name="image" accept=".jpg, .jpeg, .png" required />
+					<button className="form-input-label button-upload-photo">upload photo:</button>
+					<img id="preview-puppy" className="preview-puppy" src="/images/placeholder.png" alt="preview puppy" />
+					<input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" required onChange={createDataURIFn} />
 					<input type="hidden" id="puppyURI" name="photo" value="" />
 				</div>
-				{/*<div className="form-input">
-					<img id="preview-puppy" className="preview-puppy" src="/images/placeholder.png" alt="preview puppy"/>
-					<label htmlFor="image"><i className="material-icons">add_a_photo</i> Upload photo: </label>
-					<input type="file" onChange={createDataURIFn} id="image" name="image" accept=".jpg, .jpeg, .png" required />
-					<input type="hidden" id="puppyURI" name="photo" value="" />
-				</div>*/}
 				<div className="form-input">
-					<label>name:</label>
+					<label className="form-input-label">name:</label>
 					<input type="text" name="name" required />
 				</div>
 				<div className="form-input">
-					<label>gender:</label>
+					<label className="form-input-label">gender:</label>
 					<div className="radio-button-bar">
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-gender" name="gender" value="female" required/>
-							<label htmlFor="characteristic-gender" className="radio-button-label radio-button-label-left">female</label>
+							<input type="radio" className="radio-button" id="female" name="gender" value="female" required />
+							<label htmlFor="female" className="radio-button-label radio-button-label-left">female</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-gender" name="gender" value="male" required/>
-							<label htmlFor="characteristic-gender" className="radio-button-label radio-button-label-right">male</label>
+							<input type="radio" className="radio-button" id="male" name="gender" value="male" required />
+							<label htmlFor="male" className="radio-button-label radio-button-label-right">male</label>
 						</div>
 					</div>
 				</div>
 				<div className="form-input">
-					<label>age:</label>
+					<label className="form-input-label">age:</label>
 					<div className="radio-button-bar">
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="puppy" required/>
-							<label htmlFor="characteristic-age" className="radio-button-label radio-button-label-left">puppy</label>
+							<input type="radio" className="radio-button" id="puppy" name="age" value="puppy" required />
+							<label htmlFor="puppy" className="radio-button-label radio-button-label-left">puppy</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="adult" required/>
-							<label htmlFor="characteristic-age" className="radio-button-label radio-button-label-center">adult</label>
+							<input type="radio" className="radio-button" id="adult" name="age" value="adult" required />
+							<label htmlFor="adult" className="radio-button-label radio-button-label-center">adult</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-age" name="age" value="senior" required/>
-							<label htmlFor="characteristic-age" className="radio-button-label radio-button-label-right">senior</label>
+							<input type="radio" className="radio-button" id="senior" name="age" value="senior" required />
+							<label htmlFor="senior" className="radio-button-label radio-button-label-right">senior</label>
 						</div>
 					</div>
 				</div>
 				<div className="form-input">
-					<label>size:</label>
+					<label className="form-input-label">size:</label>
 					<div className="radio-button-bar">
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="S" required/>
-							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-left">S</label>
+							<input type="radio" className="radio-button" id="s" name="size" value="S" required />
+							<label htmlFor="s" className="radio-button-label radio-button-label-left">S</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="M" required/>
-							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-center">M</label>
+							<input type="radio" className="radio-button" id="m" name="size" value="M" required />
+							<label htmlFor="m" className="radio-button-label radio-button-label-center">M</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="L" required/>
-							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-center">L</label>
+							<input type="radio" className="radio-button" id="l" name="size" value="L" required />
+							<label htmlFor="l" className="radio-button-label radio-button-label-center">L</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-size" name="size" value="XL" required/>
-							<label htmlFor="characteristic-size" className="radio-button-label radio-button-label-right">XL</label>
+							<input type="radio" className="radio-button" id="xl" name="size" value="XL" required />
+							<label htmlFor="xl" className="radio-button-label radio-button-label-right">XL</label>
 						</div>
 					</div>
 				</div>
 				<div className="form-input">
-					<label>training:</label>
+					<label className="form-input-label">training:</label>
 					<div className="radio-button-bar">
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="needs training"/>
-							<label htmlFor="characteristic-training" className="radio-button-label radio-button-label-left">needs training</label>
+							<input type="radio" className="radio-button" id="needs-training" name="training" value="needs training" />
+							<label htmlFor="needs-training" className="radio-button-label radio-button-label-left">needs training</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="has basic training"/>
-							<label htmlFor="characteristic-training" className="radio-button-label radio-button-label-center">has basic training</label>
+							<input type="radio" className="radio-button" id="basic-training" name="training" value="has basic training" />
+							<label htmlFor="basic-training" className="radio-button-label radio-button-label-center">has basic training</label>
 						</div>
 						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="characteristic-training" name="training" value="well trained"/>
-							<label htmlFor="characteristic-training" className="radio-button-label radio-button-label-right">well trained</label>
+							<input type="radio" className="radio-button" id="well-trained" name="training" value="well trained" />
+							<label htmlFor="well-trained" className="radio-button-label radio-button-label-right">well trained</label>
 						</div>
 					</div>
 				</div>
 				<div className="form-input">
-					<label>characteristics:</label>
+					<label className="form-input-label">characteristics:</label>
 					<div className="">
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristics" name="characteristics" value="house-broken"/>
-							<label htmlFor="characteristic-house-broken" className="">house broken</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="house-broken" name="characteristics" value="house-broken" onChange={stringifyArray} />
+							<label htmlFor="house-broken" className="">house broken</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristics" name="characteristics" value="crate-trained"/>
-							<label htmlFor="characteristics" className="">crate-trained</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="crate-trained" name="characteristics" value="crate-trained" onChange={stringifyArray} />
+							<label htmlFor="crate-trained" className="">crate-trained</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristics" name="characteristics" value="neutered/spayed"/>
-							<label htmlFor="characteristics" className="">neutered/spayed</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="neutered-spayed" name="characteristics" value="neutered-spayed" onChange={stringifyArray} />
+							<label htmlFor="neutered-spayed" className="">neutered/spayed</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristics" name="characteristics" value="vaccinated"/>
-							<label htmlFor="characteristics" className="">vaccinated</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="vaccinated" name="characteristics" value="vaccinated" onChange={stringifyArray} />
+							<label htmlFor="vaccinated" className="">vaccinated</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristics" name="characteristics" value="micro-chipped"/>
-							<label htmlFor="characteristics" className="">micro-chipped</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="micro-chipped" name="characteristics" value="micro-chipped" onChange={stringifyArray} />
+							<label htmlFor="micro-chipped" className="">micro-chipped</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristics" name="characteristics" value="special-needs"/>
-							<label htmlFor="characteristics" className="">special needs</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="special-needs" name="characteristics" value="special-needs" onChange={stringifyArray} />
+							<label htmlFor="special-needs" className="">special needs</label>
 						</div>
 						<input type="hidden" id="characteristicsArrayStringId" name="characteristics" value="" />
 					</div>
 				</div>
 				<div className="form-input">
-					<label>compatibility:</label>
+					<label className="form-input-label">compatibility:</label>
 					<div className="">
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristic-compatibility" name="compatibility" value="apartments"/>
-							<label htmlFor="characteristic-compatibility" className="">apartments</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="apartments" name="compatibility" value="apartments" onChange={stringifyArray} />
+							<label htmlFor="apartments" className="">apartments</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristic-compatibility" name="compatibility" value="kids"/>
-							<label htmlFor="characteristic-compatibility" className="">kids</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="kids" name="compatibility" value="kids" onChange={stringifyArray} />
+							<label htmlFor="kids" className="">kids</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristic-compatibility" name="compatibility" value="kitties"/>
-							<label htmlFor="characteristic-compatibility" className="">kitties</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="kitties" name="compatibility" value="kitties" onChange={stringifyArray} />
+							<label htmlFor="kitties" className="">kitties</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristic-compatibility" name="compatibility" value="puppies"/>
-							<label htmlFor="characteristic-compatibility" className="">puppies</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="puppies" name="compatibility" value="puppies" onChange={stringifyArray} />
+							<label htmlFor="puppies" className="">puppies</label>
 						</div>
-						<div className="">
-							<input onChange={stringifyArray} type="checkbox" className="" id="characteristic-compatibility" name="compatibility" value="seniors"/>
-							<label htmlFor="characteristic-compatibility" className="">seniors</label>
+						<div className="checkbox-wrapper">
+							<input type="checkbox" className="" id="seniors" name="compatibility" value="seniors" onChange={stringifyArray} />
+							<label htmlFor="seniors" className="">seniors</label>
 						</div>
 						<input type="hidden" id="compatibility" name="compatibility" value="" />
 					</div>
 				</div>
 				<div className="form-input">
-					<label>biography:</label>
-					<input name="biography" type="text"/>
+					<label className="form-input-label">biography:</label>
+					<input type="text" name="biography" />
 				</div>
 				<div className="form-input">
-					<label>adoption fee:</label>
-					<input name="adoptionFee" type="text"/>
+					<label className="form-input-label">adoption fee:</label>
+					<input type="text" name="adoptionFee" />
 				</div>
 				<button type="submit" className="button" onClick={(e) => {props.addPuppyNestedProp(e)}}>Add Puppy</button>
 			</form>
