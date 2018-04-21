@@ -384,6 +384,9 @@ a.forgot-password {
     padding: 10px;
     border: 2px solid #2196F3; }
 
+.location {
+  text-align: left; }
+
 * {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
