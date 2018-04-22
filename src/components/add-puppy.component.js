@@ -120,8 +120,14 @@ export default function AddPuppy(props)
 					<label className="form-input-label">characteristics:</label>
 					<div className="">
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="house-broken" name="characteristics" value="house-broken" onChange={stringifyArray} />
-							<label htmlFor="house-broken" className="">house broken</label>
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="house-broken" name="characteristics" value="house-broken" onChange={stringifyArray} />
+							<label htmlFor="house-broken" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								house broken
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
 							<input type="checkbox" className="" id="crate-trained" name="characteristics" value="crate-trained" onChange={stringifyArray} />

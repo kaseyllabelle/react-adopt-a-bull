@@ -383,6 +383,14 @@ a.forgot-password {
     margin: 0 10px 0 0;
     padding: 10px;
     border: 2px solid #2196F3; }
+    .form-add-puppy input[type="checkbox"] ~ label div .unchecked {
+      display: block; }
+    .form-add-puppy input[type="checkbox"] ~ label div .checked {
+      display: none; }
+  .form-add-puppy input[type="checkbox"]:checked ~ label div .unchecked {
+    display: none; }
+  .form-add-puppy input[type="checkbox"]:checked ~ label div .checked {
+    display: block; }
 
 .location {
   text-align: left; }
