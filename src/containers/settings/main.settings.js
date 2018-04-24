@@ -9,6 +9,7 @@ export default function Settings(props)
 		window.location.href = "/";
 		return false;
 	}
+	console.log(props.shelterProfileSettingsProp)
 
 	return(
 		<aside className="settings">
@@ -52,10 +53,10 @@ export default function Settings(props)
 				<div className="location">
 					<p className="section-header">profile settings</p>
 					<p className="name">{props.shelterProfileSettingsProp.name || "N/A"}</p>
-					<p className="address">350 South Huntington Avenue</p>
-					<p className="address">Boston, MA 02130</p>
-					<p className="telephone">617-522-5055</p>
-					<p className="email">adoption@mspca.org</p>
+					<p className="address">{props.shelterProfileSettingsProp.address || "N/A"}</p>
+					<p className="address">{props.shelterProfileSettingsProp.address || "N/A"}</p>
+					<p className="telephone">{props.shelterProfileSettingsProp.phone || "N/A"}</p>
+					<p className="email">{props.shelterProfileSettingsProp.email || "N/A"}</p>
 					<button className="button" onClick={() => {props.editShelterProfileOverrideProp()}}>Edit</button>
 					<div className="divider">&nbsp;</div>
 				</div>
