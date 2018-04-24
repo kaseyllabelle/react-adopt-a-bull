@@ -134,6 +134,14 @@
 		margin-bottom: 10px;
 	}
 
+	.checkbox-icon-wrapper
+	{
+		position: relative;
+		display: inline-block;
+		top: 5px;
+		left: -25px;
+	}
+
 	input[type="checkbox"]
 	{
 		background-color: $grey200;

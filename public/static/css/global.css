@@ -378,6 +378,11 @@ a.forgot-password {
     display: flex;
     align-items: baseline;
     margin-bottom: 10px; }
+  .form-add-puppy .checkbox-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    top: 5px;
+    left: -25px; }
   .form-add-puppy input[type="checkbox"] {
     background-color: #EEEEEE;
     margin: 0 10px 0 0;
