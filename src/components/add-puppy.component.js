@@ -187,23 +187,53 @@ export default function AddPuppy(props)
 					<div className="">
 						<div className="checkbox-wrapper">
 							<input type="checkbox" style={{visibility: "hidden"}} className="" id="apartments" name="compatibility" value="apartments" onChange={stringifyArray} />
-							<label htmlFor="apartments" className="">apartments</label>
+							<label htmlFor="apartments" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								apartments
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
 							<input type="checkbox" style={{visibility: "hidden"}} className="" id="kids" name="compatibility" value="kids" onChange={stringifyArray} />
-							<label htmlFor="kids" className="">kids</label>
+							<label htmlFor="kids" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								kids
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
 							<input type="checkbox" style={{visibility: "hidden"}} className="" id="kitties" name="compatibility" value="kitties" onChange={stringifyArray} />
-							<label htmlFor="kitties" className="">kitties</label>
+							<label htmlFor="kitties" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								kitties
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
 							<input type="checkbox" style={{visibility: "hidden"}} className="" id="puppies" name="compatibility" value="puppies" onChange={stringifyArray} />
-							<label htmlFor="puppies" className="">puppies</label>
+							<label htmlFor="puppies" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								puppies
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
 							<input type="checkbox" style={{visibility: "hidden"}} className="" id="seniors" name="compatibility" value="seniors" onChange={stringifyArray} />
-							<label htmlFor="seniors" className="">seniors</label>
+							<label htmlFor="seniors" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								seniors
+							</label>
 						</div>
 						<input type="hidden" id="compatibility" name="compatibility" value="" />
 					</div>
