@@ -225,14 +225,14 @@ a.forgot-password {
   display: inline-flex; }
 
 .icon-next {
-  font-size: 50px; }
+  font-size: 50px !important; }
 
 .icon-mail {
-  font-size: 46px;
+  font-size: 46px !important;
   color: #FFA000; }
 
 .icon-favorite {
-  font-size: 46px;
+  font-size: 46px !important;
   color: #F50057; }
 
 @media all and (max-width: 767px) {
