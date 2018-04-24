@@ -130,24 +130,54 @@ export default function AddPuppy(props)
 							</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="crate-trained" name="characteristics" value="crate-trained" onChange={stringifyArray} />
-							<label htmlFor="crate-trained" className="">crate-trained</label>
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="crate-trained" name="characteristics" value="crate-trained" onChange={stringifyArray} />
+							<label htmlFor="crate-trained" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								crate-trained
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="neutered-spayed" name="characteristics" value="neutered-spayed" onChange={stringifyArray} />
-							<label htmlFor="neutered-spayed" className="">neutered/spayed</label>
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="neutered-spayed" name="characteristics" value="neutered-spayed" onChange={stringifyArray} />
+							<label htmlFor="neutered-spayed" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								neutered/spayed
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="vaccinated" name="characteristics" value="vaccinated" onChange={stringifyArray} />
-							<label htmlFor="vaccinated" className="">vaccinated</label>
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="vaccinated" name="characteristics" value="vaccinated" onChange={stringifyArray} />
+							<label htmlFor="vaccinated" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								vaccinated
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="micro-chipped" name="characteristics" value="micro-chipped" onChange={stringifyArray} />
-							<label htmlFor="micro-chipped" className="">micro-chipped</label>
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="micro-chipped" name="characteristics" value="micro-chipped" onChange={stringifyArray} />
+							<label htmlFor="micro-chipped" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								micro-chipped
+							</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="special-needs" name="characteristics" value="special-needs" onChange={stringifyArray} />
-							<label htmlFor="special-needs" className="">special needs</label>
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="special-needs" name="characteristics" value="special-needs" onChange={stringifyArray} />
+							<label htmlFor="special-needs" className="">
+								<div style={{position: "relative", display: "inline-block", left: "-20px"}}>
+									<i className="material-icons unchecked">check_box_outline_blank</i>
+									<i className="material-icons checked">check_box</i>
+								</div>
+								special needs
+							</label>
 						</div>
 						<input type="hidden" id="characteristicsArrayStringId" name="characteristics" value="" />
 					</div>
@@ -156,23 +186,23 @@ export default function AddPuppy(props)
 					<label className="form-input-label">compatibility:</label>
 					<div className="">
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="apartments" name="compatibility" value="apartments" onChange={stringifyArray} />
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="apartments" name="compatibility" value="apartments" onChange={stringifyArray} />
 							<label htmlFor="apartments" className="">apartments</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="kids" name="compatibility" value="kids" onChange={stringifyArray} />
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="kids" name="compatibility" value="kids" onChange={stringifyArray} />
 							<label htmlFor="kids" className="">kids</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="kitties" name="compatibility" value="kitties" onChange={stringifyArray} />
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="kitties" name="compatibility" value="kitties" onChange={stringifyArray} />
 							<label htmlFor="kitties" className="">kitties</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="puppies" name="compatibility" value="puppies" onChange={stringifyArray} />
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="puppies" name="compatibility" value="puppies" onChange={stringifyArray} />
 							<label htmlFor="puppies" className="">puppies</label>
 						</div>
 						<div className="checkbox-wrapper">
-							<input type="checkbox" className="" id="seniors" name="compatibility" value="seniors" onChange={stringifyArray} />
+							<input type="checkbox" style={{visibility: "hidden"}} className="" id="seniors" name="compatibility" value="seniors" onChange={stringifyArray} />
 							<label htmlFor="seniors" className="">seniors</label>
 						</div>
 						<input type="hidden" id="compatibility" name="compatibility" value="" />
