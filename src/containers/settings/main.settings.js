@@ -45,6 +45,7 @@ export default function Settings(props)
 					</div>
 					<button type="submit" className="button">Save</button>
 				</form>
+			<div className="divider">&nbsp;</div>
 			}
 
 			{props.accountTypeProp === 'shelter' && !props.editShelterOverrideBoolean && 
@@ -57,9 +58,8 @@ export default function Settings(props)
 					<p className="email">adoption@mspca.org</p>
 					<button className="button" onClick={() => {props.editShelterProfileOverrideProp()}}>Edit</button>
 				</div>
-			}
-
 			<div className="divider">&nbsp;</div>
+			}
 
 			{/* shared account settings */}
 			<p className="section-header">account settings</p>
