@@ -296,15 +296,16 @@ a.forgot-password {
   width: 100%;
   padding: 0 30px 30px; }
   .form-add-puppy input[type="hidden"],
-  .form-add-puppy input[type="text"] {
+  .form-add-puppy input[type="text"],
+  .form-add-puppy textarea {
     display: block;
     width: 100%;
-    /*margin-top: 2px;*/
     border: 2px solid #2196F3;
     padding: 10px; }
+  .form-add-puppy textarea {
+    border-radius: 3px; }
   .form-add-puppy .preview-puppy {
-    max-width: 200px;
-    /*margin-top: 2px;*/ }
+    max-width: 200px; }
   .form-add-puppy .button-upload-photo-wrapper {
     position: relative;
     display: inline-block;
@@ -356,49 +357,57 @@ a.forgot-password {
     text-align: center;
     text-transform: uppercase;
     color: #2196F3; }
-  .form-add-puppy label.radio-button-label-left {
-    border-right: 1px solid #2196F3;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0; }
-  .form-add-puppy label.radio-button-label-center {
-    border-right: 1px solid #2196F3;
-    border-left: 1px solid #2196F3;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0; }
-  .form-add-puppy label.radio-button-label-right {
-    border-left: 1px solid #2196F3;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0; }
-  .form-add-puppy input.radio-button:checked + label.radio-button-label {
-    background-color: #2196F3;
-    color: white; }
-  .form-add-puppy .checkbox-wrapper {
+  .form-add-puppy .checkbox-wrapper,
+  .form-add-puppy .radio-wrapper {
     display: flex;
     align-items: baseline;
     margin-bottom: 10px; }
-  .form-add-puppy .checkbox-icon-wrapper {
+  .form-add-puppy .checkbox-icon-wrapper,
+  .form-add-puppy .radio-icon-wrapper {
     position: relative;
     display: inline-block;
     top: 5px;
     left: -25px; }
-  .form-add-puppy input[type="checkbox"] {
+  .form-add-puppy input[type="checkbox"],
+  .form-add-puppy input[type="radio"] {
     background-color: #EEEEEE;
     margin: 0 10px 0 0;
     padding: 10px;
     border: 2px solid #2196F3; }
-    .form-add-puppy input[type="checkbox"] ~ label div .unchecked {
+    .form-add-puppy input[type="checkbox"] ~ label div .unchecked,
+    .form-add-puppy input[type="radio"] ~ label div .unchecked {
       display: block; }
-    .form-add-puppy input[type="checkbox"] ~ label div .checked {
+    .form-add-puppy input[type="checkbox"] ~ label div .checked,
+    .form-add-puppy input[type="radio"] ~ label div .checked {
       display: none; }
-  .form-add-puppy input[type="checkbox"]:checked ~ label div .unchecked {
+  .form-add-puppy input[type="checkbox"]:checked ~ label div .unchecked,
+  .form-add-puppy input[type="radio"]:checked ~ label div .unchecked {
     display: none; }
-  .form-add-puppy input[type="checkbox"]:checked ~ label div .checked {
+  .form-add-puppy input[type="checkbox"]:checked ~ label div .checked,
+  .form-add-puppy input[type="radio"]:checked ~ label div .checked {
     display: block; }
 
 .location {
   text-align: left; }
+
+.email {
+  margin-bottom: 10px; }
+
+.form-shelter-profile,
+.account-settings {
+  text-align: left; }
+  .form-shelter-profile input[type="text"],
+  .account-settings input[type="text"] {
+    display: block;
+    width: 100%;
+    margin-top: 2px;
+    border: 2px solid #2196F3;
+    padding: 10px; }
+  .form-shelter-profile input[type="text"]:active,
+  .form-shelter-profile input[type="text"]:focus,
+  .account-settings input[type="text"]:active,
+  .account-settings input[type="text"]:focus {
+    box-shadow: 0 0 2px 0 #2196F3; }
 
 * {
   box-sizing: border-box;
@@ -450,7 +459,8 @@ input {
   outline: none;
   border-radius: 3px; }
 
-button[type="submit"] {
+button[type="submit"],
+.button {
   display: block;
   margin: 0 auto;
   border: 2px solid #FFA000;
@@ -460,12 +470,16 @@ button[type="submit"] {
   text-transform: uppercase; }
 
 button[type="submit"]:hover,
-button[type="submit"]:active {
+button[type="submit"]:active,
+.button:hover,
+.button:active {
   border-color: #FFB300;
   background-color: #FFB300; }
 
 button[disabled],
-button[disabled]:hover {
+button[disabled]:hover,
+.button[disabled],
+.button[disabled]:hover {
   border-color: #FFB300;
   background-color: #FFA000;
   opacity: 0.6;
@@ -482,5 +496,11 @@ input[disabled] + label {
 
 .form-input {
   margin-bottom: 25px; }
+
+.divider {
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+  background-color: #2196F3; }
 
 /*# sourceMappingURL=global.css.map */

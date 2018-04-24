@@ -2,3 +2,29 @@
 {
 	text-align: left;
 }
+
+.email
+{
+	margin-bottom: 10px;
+}
+
+.form-shelter-profile,
+.account-settings
+{
+	text-align: left;
+
+	input[type="text"]
+	{
+		display: block;
+		width: 100%;
+		margin-top: 2px;
+		border: 2px solid $blue500;
+		padding: 10px;
+	}
+
+	input[type="text"]:active,
+	input[type="text"]:focus
+	{
+	    box-shadow: 0 0 2px 0 $blue500;
+	}
+}

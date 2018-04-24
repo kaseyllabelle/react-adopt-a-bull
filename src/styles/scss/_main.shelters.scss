@@ -4,19 +4,23 @@
 	padding: 0 30px 30px;
 
 	input[type="hidden"],
-	input[type="text"]
+	input[type="text"],
+	textarea
 	{
 		display: block;
 		width: 100%;
-		/*margin-top: 2px;*/
 		border: 2px solid $blue500;
 		padding: 10px;
+	}
+
+	textarea
+	{
+		border-radius: 3px;
 	}
 
 	.preview-puppy
 	{
 		max-width: 200px;
-		/*margin-top: 2px;*/
 	}
 
 	.button-upload-photo-wrapper
@@ -97,44 +101,16 @@
 		color: $blue500;
 	}
 
-	label.radio-button-label-left
-	{
-		border-right: 1px solid $blue500;
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	label.radio-button-label-center
-	{
-		border-right: 1px solid $blue500;
-		border-left: 1px solid $blue500;
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-
-	label.radio-button-label-right
-	{
-		border-left: 1px solid $blue500;
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-	}
-
-	input.radio-button:checked + label.radio-button-label
-	{
-		background-color: $blue500;
-		color: white;
-	}
-
-	.checkbox-wrapper
+	.checkbox-wrapper,
+	.radio-wrapper
 	{
 		display: flex;
 		align-items: baseline;
 		margin-bottom: 10px;
 	}
 
-	.checkbox-icon-wrapper
+	.checkbox-icon-wrapper,
+	.radio-icon-wrapper
 	{
 		position: relative;
 		display: inline-block;
@@ -142,7 +118,8 @@
 		left: -25px;
 	}
 
-	input[type="checkbox"]
+	input[type="checkbox"],
+	input[type="radio"]
 	{
 		background-color: $grey200;
 		margin: 0 10px 0 0;
@@ -163,7 +140,8 @@
 		}
 	}
 
-	input[type="checkbox"]:checked ~ label div
+	input[type="checkbox"]:checked ~ label div,
+	input[type="radio"]:checked ~ label div
 	{
 		.unchecked
 		{

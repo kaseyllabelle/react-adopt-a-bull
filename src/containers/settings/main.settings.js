@@ -12,53 +12,35 @@ export default function Settings(props)
 
 	return(
 		<aside className="settings">
-			<p className="section-header">account settings</p>
-			<div className="account-settings">
-				<p>Reset password</p>
-				<div className="form-input">
-					<label htmlFor="oldPassword">Old password:</label>
-					<input id="oldPassword" />
-				</div>
-				<div className="form-input">
-					<label htmlFor="newPassword">New password:</label>
-					<input id="newPassword" />
-				</div>
-				<a onClick={(e) => {props.resetPasswordProp(e)}}>Submit</a>
-				<hr/>
-				<p><a onClick={logOutFn}>Log out</a></p>
-				<hr/>
-				<p><a onClick={(e) => {props.deactivateAccountProp(e)}}>Delete account</a></p>
-			</div>
-
 			{props.accountTypeProp === 'shelter' && (props.shelterProfileSettingsProp.unset || props.editShelterOverrideBoolean) && 
-				<form id="shelter-profile" onSubmit={(e) => {props.shelterProfileProp(e)}}>
-				{props.editShelterOverrideBoolean ? 'a' : 'b'}
+				<form className="form-shelter-profile" id="shelter-profile" onSubmit={(e) => {props.shelterProfileProp(e)}}>
+					<p className="section-header">profile settings</p>
 					<div className="form-input">
-						<label>Shelter Name</label>
+						<label className="form-input-label">Shelter Name</label>
 						<input name="shelter-name" type="text"/>
 					</div>
 					<div className="form-input">
-						<label>Address</label>
+						<label className="form-input-label">Address</label>
 						<input name="shelter-address" type="text"/>
 					</div>
 					<div className="form-input">
-						<label>City</label>
+						<label className="form-input-label">City</label>
 						<input name="shelter-city" type="text"/>
 					</div>
 					<div className="form-input">
-						<label>State</label>
+						<label className="form-input-label">State</label>
 						<input name="shelter-state" type="text"/>
 					</div>
 					<div className="form-input">
-						<label>Zip</label>
+						<label className="form-input-label">Zip</label>
 						<input name="shelter-zip" type="text"/>
 					</div>
 					<div className="form-input">
-						<label>Phone Number</label>
+						<label className="form-input-label">Phone Number</label>
 						<input name="shelter-phone" type="text"/>
 					</div>
 					<div className="form-input">
-						<label>Email Address</label>
+						<label className="form-input-label">Email Address</label>
 						<input name="shelter-email" type="text"/>
 					</div>
 					<button type="submit" className="button">Save</button>
@@ -67,7 +49,7 @@ export default function Settings(props)
 
 			{props.accountTypeProp === 'shelter' && !props.editShelterOverrideBoolean && 
 				<div className="location">
-					<p>shelter profile</p>
+					<p className="section-header">profile settings</p>
 					<p className="name">{props.shelterProfileSettingsProp.name || "N/A"}</p>
 					<p className="address">350 South Huntington Avenue</p>
 					<p className="address">Boston, MA 02130</p>
@@ -76,6 +58,27 @@ export default function Settings(props)
 					<button className="button" onClick={() => {props.editShelterProfileOverrideProp()}}>Edit</button>
 				</div>
 			}
+
+			<div className="divider">&nbsp;</div>
+
+			{/* shared account settings */}
+			<p className="section-header">account settings</p>
+			<div className="account-settings">
+				<p>Reset password</p>
+				<div className="form-input">
+					<label className="form-input-label" htmlFor="oldPassword">Old password:</label>
+					<input id="oldPassword" type="text" />
+				</div>
+				<div className="form-input">
+					<label className="form-input-label" htmlFor="newPassword">New password:</label>
+					<input id="newPassword" type="text" />
+				</div>
+				<a onClick={(e) => {props.resetPasswordProp(e)}}>Submit</a>
+				<hr/>
+				<p><a onClick={logOutFn}>Log out</a></p>
+				<hr/>
+				<p><a onClick={(e) => {props.deactivateAccountProp(e)}}>Delete account</a></p>
+			</div>
 
 			{/* 
 				TODO: 

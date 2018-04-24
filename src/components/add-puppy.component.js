@@ -50,197 +50,263 @@ export default function AddPuppy(props)
 				</div>
 				<div className="form-input">
 					<label className="form-input-label">gender:</label>
-					<div className="radio-button-bar">
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="female" name="gender" value="female" required />
-							<label htmlFor="female" className="radio-button-label radio-button-label-left">female</label>
-						</div>
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="male" name="gender" value="male" required />
-							<label htmlFor="male" className="radio-button-label radio-button-label-right">male</label>
-						</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="female" name="gender" value="female" required />
+						<label htmlFor="female">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Female
+						</label>
+					</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="male" name="gender" value="male" required />
+						<label htmlFor="male">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Male
+						</label>
 					</div>
 				</div>
 				<div className="form-input">
 					<label className="form-input-label">age:</label>
-					<div className="radio-button-bar">
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="puppy" name="age" value="puppy" required />
-							<label htmlFor="puppy" className="radio-button-label radio-button-label-left">puppy</label>
-						</div>
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="adult" name="age" value="adult" required />
-							<label htmlFor="adult" className="radio-button-label radio-button-label-center">adult</label>
-						</div>
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="senior" name="age" value="senior" required />
-							<label htmlFor="senior" className="radio-button-label radio-button-label-right">senior</label>
-						</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="puppy" name="age" value="puppy" required />
+						<label htmlFor="puppy">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Puppy
+						</label>
+					</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="adult" name="age" value="adult" required />
+						<label htmlFor="adult">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Adult
+						</label>
+					</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="senior" name="age" value="senior" required />
+						<label htmlFor="senior">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Senior
+						</label>
 					</div>
 				</div>
 				<div className="form-input">
 					<label className="form-input-label">size:</label>
-					<div className="radio-button-bar">
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="s" name="size" value="S" required />
-							<label htmlFor="s" className="radio-button-label radio-button-label-left">S</label>
-						</div>
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="m" name="size" value="M" required />
-							<label htmlFor="m" className="radio-button-label radio-button-label-center">M</label>
-						</div>
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="l" name="size" value="L" required />
-							<label htmlFor="l" className="radio-button-label radio-button-label-center">L</label>
-						</div>
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="xl" name="size" value="XL" required />
-							<label htmlFor="xl" className="radio-button-label radio-button-label-right">XL</label>
-						</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="s" name="size" value="S" required />
+						<label htmlFor="s">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Small
+						</label>
+					</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="m" name="size" value="M" required />
+						<label htmlFor="m">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Medium
+						</label>
+					</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="l" name="size" value="L" required />
+						<label htmlFor="l">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Large
+						</label>
+					</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="xl" name="size" value="XL" required />
+						<label htmlFor="xl">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							Extra-Large
+						</label>
 					</div>
 				</div>
 				<div className="form-input">
 					<label className="form-input-label">training:</label>
-					<div className="radio-button-bar">
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="needs-training" name="training" value="needs training" />
-							<label htmlFor="needs-training" className="radio-button-label radio-button-label-left">needs training</label>
-						</div>
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="basic-training" name="training" value="has basic training" />
-							<label htmlFor="basic-training" className="radio-button-label radio-button-label-center">has basic training</label>
-						</div>
-						<div className="radio-button-wrapper">
-							<input type="radio" className="radio-button" id="well-trained" name="training" value="well trained" />
-							<label htmlFor="well-trained" className="radio-button-label radio-button-label-right">well trained</label>
-						</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="needs-training" name="training" value="needs training" />
+						<label htmlFor="needs-training">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							needs training
+						</label>
+					</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="basic-training" name="training" value="has basic training" />
+						<label htmlFor="basic-training">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							has basic training
+						</label>
+					</div>
+					<div className="radio-wrapper">
+						<input type="radio" style={{visibility: "hidden"}} id="well-trained" name="training" value="well trained" />
+						<label htmlFor="well-trained">
+							<div className="radio-icon-wrapper">
+								<i className="material-icons unchecked">radio_button_unchecked</i>
+								<i className="material-icons checked">radio_button_checked</i>
+							</div>
+							well trained
+						</label>
 					</div>
 				</div>
 				<div className="form-input">
 					<label className="form-input-label">characteristics:</label>
-					<div className="">
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="house-broken" name="characteristics" value="house-broken" onChange={stringifyArray} />
-							<label htmlFor="house-broken" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								house broken
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="crate-trained" name="characteristics" value="crate-trained" onChange={stringifyArray} />
-							<label htmlFor="crate-trained" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								crate-trained
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="neutered-spayed" name="characteristics" value="neutered-spayed" onChange={stringifyArray} />
-							<label htmlFor="neutered-spayed" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								neutered/spayed
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="vaccinated" name="characteristics" value="vaccinated" onChange={stringifyArray} />
-							<label htmlFor="vaccinated" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								vaccinated
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="micro-chipped" name="characteristics" value="micro-chipped" onChange={stringifyArray} />
-							<label htmlFor="micro-chipped" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								micro-chipped
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="special-needs" name="characteristics" value="special-needs" onChange={stringifyArray} />
-							<label htmlFor="special-needs" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								special needs
-							</label>
-						</div>
-						<input type="hidden" id="characteristicsArrayStringId" name="characteristics" value="" />
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="house-broken" name="characteristics" value="house-broken" onChange={stringifyArray} />
+						<label htmlFor="house-broken">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							house broken
+						</label>
 					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="crate-trained" name="characteristics" value="crate-trained" onChange={stringifyArray} />
+						<label htmlFor="crate-trained">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							crate-trained
+						</label>
+					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="neutered-spayed" name="characteristics" value="neutered-spayed" onChange={stringifyArray} />
+						<label htmlFor="neutered-spayed">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							neutered/spayed
+						</label>
+					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="vaccinated" name="characteristics" value="vaccinated" onChange={stringifyArray} />
+						<label htmlFor="vaccinated">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							vaccinated
+						</label>
+					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="micro-chipped" name="characteristics" value="micro-chipped" onChange={stringifyArray} />
+						<label htmlFor="micro-chipped">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							micro-chipped
+						</label>
+					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="special-needs" name="characteristics" value="special-needs" onChange={stringifyArray} />
+						<label htmlFor="special-needs">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							special needs
+						</label>
+					</div>
+					<input type="hidden" id="characteristicsArrayStringId" name="characteristics" value="" />
 				</div>
 				<div className="form-input">
 					<label className="form-input-label">compatibility:</label>
-					<div className="">
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="apartments" name="compatibility" value="apartments" onChange={stringifyArray} />
-							<label htmlFor="apartments" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								apartments
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="kids" name="compatibility" value="kids" onChange={stringifyArray} />
-							<label htmlFor="kids" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								kids
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="kitties" name="compatibility" value="kitties" onChange={stringifyArray} />
-							<label htmlFor="kitties" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								kitties
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="puppies" name="compatibility" value="puppies" onChange={stringifyArray} />
-							<label htmlFor="puppies" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								puppies
-							</label>
-						</div>
-						<div className="checkbox-wrapper">
-							<input type="checkbox" style={{visibility: "hidden"}} className="" id="seniors" name="compatibility" value="seniors" onChange={stringifyArray} />
-							<label htmlFor="seniors" className="">
-								<div className="checkbox-icon-wrapper">
-									<i className="material-icons unchecked">check_box_outline_blank</i>
-									<i className="material-icons checked">check_box</i>
-								</div>
-								seniors
-							</label>
-						</div>
-						<input type="hidden" id="compatibility" name="compatibility" value="" />
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="apartments" name="compatibility" value="apartments" onChange={stringifyArray} />
+						<label htmlFor="apartments">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							apartments
+						</label>
 					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="kids" name="compatibility" value="kids" onChange={stringifyArray} />
+						<label htmlFor="kids">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							kids
+						</label>
+					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="kitties" name="compatibility" value="kitties" onChange={stringifyArray} />
+						<label htmlFor="kitties">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							kitties
+						</label>
+					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="puppies" name="compatibility" value="puppies" onChange={stringifyArray} />
+						<label htmlFor="puppies">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							puppies
+						</label>
+					</div>
+					<div className="checkbox-wrapper">
+						<input type="checkbox" style={{visibility: "hidden"}} id="seniors" name="compatibility" value="seniors" onChange={stringifyArray} />
+						<label htmlFor="seniors">
+							<div className="checkbox-icon-wrapper">
+								<i className="material-icons unchecked">check_box_outline_blank</i>
+								<i className="material-icons checked">check_box</i>
+							</div>
+							seniors
+						</label>
+					</div>
+					<input type="hidden" id="compatibility" name="compatibility" value="" />
 				</div>
+				{/*
 				<div className="form-input">
 					<label className="form-input-label">biography:</label>
 					<input type="text" name="biography" />
+				</div>
+				*/}
+				<div className="form-input">
+					<label className="form-input-label">biography:</label>
+					<textarea name="biography" rows="7" cols="30"></textarea>
 				</div>
 				<div className="form-input">
 					<label className="form-input-label">adoption fee:</label>
