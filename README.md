@@ -1,6 +1,6 @@
 # adopt-a-bull
 
-  [adopt-a-bull](https://react-adopt-a-bull.netlify.com/) is an app that connects users with ador-a-bull, adopt-a-bull pitbulls. 
+  [adopt-a-bull](https://react-adopt-a-bull.netlify.com/) is a react app that connects users with ador-a-bull, adopt-a-bull pitbulls. 
 
   *demo adopter email: demo-adopter@gmail.com*  
   *demo adopter password: Password123*  
