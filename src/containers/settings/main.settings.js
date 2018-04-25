@@ -18,31 +18,35 @@ export default function Settings(props)
 					<p className="section-header">profile settings</p>
 					<div className="form-input">
 						<label className="form-input-label">Shelter Name</label>
-						<input name="shelter-name" type="text"/>
+						<input name="name" type="text"/>
 					</div>
 					<div className="form-input">
-						<label className="form-input-label">Address</label>
-						<input name="shelter-address" type="text"/>
+						<label className="form-input-label">Number</label>
+						<input name="number" type="text"/>
+					</div>
+					<div className="form-input">
+						<label className="form-input-label">Street</label>
+						<input name="street" type="text"/>
 					</div>
 					<div className="form-input">
 						<label className="form-input-label">City</label>
-						<input name="shelter-city" type="text"/>
+						<input name="city" type="text"/>
 					</div>
 					<div className="form-input">
 						<label className="form-input-label">State</label>
-						<input name="shelter-state" type="text"/>
+						<input name="state" type="text"/>
 					</div>
 					<div className="form-input">
 						<label className="form-input-label">Zip</label>
-						<input name="shelter-zip" type="text"/>
+						<input name="zipcode" type="text"/>
 					</div>
 					<div className="form-input">
 						<label className="form-input-label">Phone Number</label>
-						<input name="shelter-phone" type="text"/>
+						<input name="phone" type="text"/>
 					</div>
 					<div className="form-input">
 						<label className="form-input-label">Email Address</label>
-						<input name="shelter-email" type="text"/>
+						<input name="email" type="text"/>
 					</div>
 					<button type="submit" className="button">Save</button>
 					<div className="divider">&nbsp;</div>
@@ -53,8 +57,10 @@ export default function Settings(props)
 				<div className="location">
 					<p className="section-header">profile settings</p>
 					<p className="name">{props.shelterProfileSettingsProp.name || "N/A"}</p>
-					<p className="address">{props.shelterProfileSettingsProp.address || "N/A"}</p>
-					<p className="address">{props.shelterProfileSettingsProp.address || "N/A"}</p>
+					{/*
+					<p className="address">{props.shelterProfileSettingsProp.address.number || "N/A"} {props.shelterProfileSettingsProp.address.street || "N/A"}</p>
+					<p className="address">{props.shelterProfileSettingsProp.address.city || "N/A"}, {props.shelterProfileSettingsProp.address.state || "N/A"} {props.shelterProfileSettingsProp.address.zip || "N/A"}</p>
+					*/}
 					<p className="telephone">{props.shelterProfileSettingsProp.phone || "N/A"}</p>
 					<p className="email">{props.shelterProfileSettingsProp.email || "N/A"}</p>
 					<button className="button" onClick={() => {props.editShelterProfileOverrideProp()}}>Edit</button>
