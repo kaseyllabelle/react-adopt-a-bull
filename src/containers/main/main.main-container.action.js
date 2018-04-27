@@ -113,6 +113,7 @@ export const shelterProfileAction = (dispatch, shelterProfileJSON) => {
 		},
 		body: JSON.stringify(data)
 	}).then((obj) => {
+		console.log(obj);
 		return obj.json().then((o) => {
 			return dispatch({
 				type: SHELTER_PROFILE,

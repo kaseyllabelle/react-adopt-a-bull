@@ -57,10 +57,8 @@ export default function Settings(props)
 				<div className="location">
 					<p className="section-header">profile settings</p>
 					<p className="name">{props.shelterProfileSettingsProp.name || "N/A"}</p>
-					{/*
-					<p className="address">{props.shelterProfileSettingsProp.address.number || "N/A"} {props.shelterProfileSettingsProp.address.street || "N/A"}</p>
-					<p className="address">{props.shelterProfileSettingsProp.address.city || "N/A"}, {props.shelterProfileSettingsProp.address.state || "N/A"} {props.shelterProfileSettingsProp.address.zip || "N/A"}</p>
-					*/}
+					<p className="address">{(props.shelterProfileSettingsProp.address && props.shelterProfileSettingsProp.address.number) || "N/A"} {(props.shelterProfileSettingsProp.address && props.shelterProfileSettingsProp.address.street) || "N/A"}</p>
+					<p className="address">{(props.shelterProfileSettingsProp.address && props.shelterProfileSettingsProp.address.city) || "N/A"}, {(props.shelterProfileSettingsProp.address && props.shelterProfileSettingsProp.address.state) || "N/A"} {(props.shelterProfileSettingsProp.address && props.shelterProfileSettingsProp.address.zipcode) || "N/A"}</p>
 					<p className="telephone">{props.shelterProfileSettingsProp.phone || "N/A"}</p>
 					<p className="email">{props.shelterProfileSettingsProp.email || "N/A"}</p>
 					<button className="button" onClick={() => {props.editShelterProfileOverrideProp()}}>Edit</button>

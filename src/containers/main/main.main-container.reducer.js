@@ -31,6 +31,7 @@ export default function mainContainerReducer(state=initialState, action) {
 		return  {...state, adoptabullPuppiesFromStore: action.payload};
 	}
 	if (action.type === SHELTER_PROFILE) {
+		console.log(action.payload);
 		return  {...state, shelterProfileFromStore: action.payload};
 	}
 	else {
