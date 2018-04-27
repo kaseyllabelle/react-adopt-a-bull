@@ -19,7 +19,7 @@ export default function PuppyCardInfoExpanded(props)
 	const puppyShelterAddressCityProp =  props.puppyProp["0"] && props.puppyProp["0"].shelterId.address.city;
 	const puppyShelterAddressStateProp =  props.puppyProp["0"] && props.puppyProp["0"].shelterId.address.state;
 	const puppyShelterAddressZipcodeProp =  props.puppyProp["0"] && props.puppyProp["0"].shelterId.address.zipcode;
-	const puppyShelterTelephoneProp =  props.puppyProp["0"] && props.puppyProp["0"].shelterId.telephone;
+	const puppyShelterTelephoneProp =  props.puppyProp["0"] && props.puppyProp["0"].shelterId.phone;
 	const puppyShelterEmailProp =  props.puppyProp["0"] && props.puppyProp["0"].shelterId.email;
 
 	return(
@@ -57,13 +57,13 @@ export default function PuppyCardInfoExpanded(props)
 			{puppyCharacteristicsProp &&
 				<p className="characteristics">
 					<span className="puppy-card-expanded-label">Characteristics: </span> 
-					<span className="puppy-card-expanded-content">{puppyCharacteristicsProp}</span>
+					<span className="puppy-card-expanded-content">{puppyCharacteristicsProp.replace(/,/g, ', ')}</span>
 				</p>
 			}
 			{puppyCompatibilityProp &&
 				<p className="compatibility">
 					<span className="puppy-card-expanded-label">Compatibility: </span> 
-					<span className="puppy-card-expanded-content">{puppyCompatibilityProp}</span>
+					<span className="puppy-card-expanded-content">{puppyCompatibilityProp.replace(/,/g, ', ')}</span>
 				</p>
 			}
 			{puppyBiographyProp.length > 0 &&
