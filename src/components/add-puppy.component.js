@@ -23,7 +23,6 @@ export default function AddPuppy(props)
 		let compatibilityArrayString = "";
 		const characteristics = document.querySelectorAll(`input[name="characteristics"]:checked`);
 		const compatibility = document.querySelectorAll(`input[name="compatibility"]:checked`);
-		console.log(characteristics, compatibility);
 		for(let i=0; i<characteristics.length; i++) {
 			characteristicsArrayString += "," + characteristics[i].value;
 		}
@@ -37,6 +36,7 @@ export default function AddPuppy(props)
 	return(
 		<Fragment>
 			<p className="section-header section-header-main">add puppy</p>
+			<div id="puppy-added"></div>
 			<form className="form-add-puppy" id="add-puppy">
 				<div className="form-input button-upload-photo-wrapper">
 					<button className="form-input-label button-upload-photo">upload photo:</button>

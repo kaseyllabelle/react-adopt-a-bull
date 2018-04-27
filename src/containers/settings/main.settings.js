@@ -9,8 +9,7 @@ export default function Settings(props)
 		window.location.href = "/";
 		return false;
 	}
-	console.log(props.shelterProfileSettingsProp)
-
+	
 	return(
 		<aside className="settings">
 			{props.accountTypeProp === 'shelter' && (props.shelterProfileSettingsProp.unset || props.editShelterOverrideBoolean) && 

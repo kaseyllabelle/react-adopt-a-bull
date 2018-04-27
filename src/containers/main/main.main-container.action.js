@@ -40,6 +40,8 @@ export const addPuppyAction = (dispatch, puppyJSON) => {
 		body: JSON.stringify(data)
 	}).then((obj) => {
 		return obj.json().then((o) => {
+			document.getElementById('add-puppy').reset()
+			document.querySelector('section.main').scrollTo(0,0)
 			renderAdoptabullPuppiesAction(dispatch)
 		});
 	})
